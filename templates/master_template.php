@@ -61,9 +61,11 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="../navbar/">Default</a></li>
-				<li><a href="../navbar-static-top/">Static top</a></li>
-				<li class="active"><a href="./">Fixed top</a></li>
+              <? if($this->auth->logged_in):?>
+				<li><a href="<?=BASE_URL?>logout">Logout</a></li>
+              <? else: ?>
+				<li><a href="<?=BASE_URL?>login">Login</a></li>
+              <? endif?>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
