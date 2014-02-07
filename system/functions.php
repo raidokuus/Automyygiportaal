@@ -32,9 +32,8 @@ function __($text)
 
 function debug($msg)
 {
-    return false;
 	if (!DEBUG) return false;
-	echo "<br>";
+	echo "<br>\n";
 	$file = debug_backtrace()[0]['file'];
 	$line = debug_backtrace()[0]['line'];
 	echo "[" . $file . ":" . $line . "] <b>" . $msg . "</b>";
