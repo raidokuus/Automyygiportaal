@@ -11,13 +11,13 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="<?=ASSETS_URL?>components/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?=ASSETS_URL?>components/bootstrap/3.0.3/css/main.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
 	<style>
 		body {
 			min-height: 2000px !important;
 			padding-top: 70px;
-			background: url(<?= ASSETS_URL ?>img/bg.jpg);
 		}
 	</style>
 

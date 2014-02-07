@@ -1,0 +1,6 @@
+.container-welcome {
+  padding-top: 10px;
+}
+.container-welcome .row {
+  max-width: 740px;
+}
