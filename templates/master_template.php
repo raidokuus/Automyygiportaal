@@ -62,9 +62,9 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
               <? if($this->auth->logged_in):?>
-				<li><a href="<?=BASE_URL?>logout">Logout</a></li>
+				<li><a href="<?=BASE_URL?>logout">Välju</a></li>
               <? else: ?>
-				<li><a href="<?=BASE_URL?>login">Login</a></li>
+				<li><a href="<?=BASE_URL?>login">Sisene</a></li>
               <? endif?>
 			</ul>
 		</div><!--/.nav-collapse -->
