@@ -170,7 +170,8 @@ Riik
             <input type="text" id="filename" readonly="true"/>
             <input type="button" value="Vali pildid" id="fakeBrowse" onclick="HandleBrowseClick();"/>
             <div class="form-actions">
-                <button type="submit" class="btn btn-large btn-primary">Salvesta</button>
+                <a href="<?=BASE_URL?>"button type="submit" class="btn btn-large btn-primary">Salvesta</button></a>
+            </div>
             </div>
     	</div> <!-- .span8 -->
 	</div>
