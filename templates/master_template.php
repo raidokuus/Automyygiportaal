@@ -66,6 +66,7 @@
               <? else: ?>
 				<li><a href="<?=BASE_URL?>login">Sisene</a></li>
               <? endif?>
+                <li><a href="<?=BASE_URL?>kuulutus">Lisa kuulutus</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
 	</div>
