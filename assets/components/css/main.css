@@ -4,3 +4,8 @@
 .container-welcome .row {
   max-width: 740px;
 }
+
+.car-thumb {
+  max-width: 300px;
+  height: auto;
+}
