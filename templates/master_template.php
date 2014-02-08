@@ -11,12 +11,12 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="<?=ASSETS_URL?>components/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
-	<link href="<?=ASSETS_URL?>components/bootstrap/3.0.3/css/main.css" rel="stylesheet">
+	<link href="<?=ASSETS_URL?>components/css/main.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
 	<style>
 		body {
-			min-height: 2000px !important;
+			/*min-height: 2000px !important;*/
 			padding-top: 70px;
 		}
 	</style>
@@ -44,9 +44,9 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="<?=BASE_URL?>">Avaleht</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li <?= $controller == 'welcome' ? 'class="active"' : '' ?>><a href="<?=BASE_URL?>">Avaleht</a></li>
+				<li <?= $controller == 'cars' ? 'class="active"' : '' ?>><a href="<?=BASE_URL?>cars">Autod</a></li>
+<!-- 				<li><a href="#contact">Contact</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -59,7 +59,7 @@
 						<li><a href="#">One more separated link</a></li>
 					</ul>
 				</li>
-			</ul>
+ -->			</ul>
 			<ul class="nav navbar-nav navbar-right">
               <? if($this->auth->logged_in):?>
 				<li><a href="<?=BASE_URL?>logout">Välju</a></li>
