@@ -6,6 +6,6 @@ class admin extends Controller {
     function index(){
     }
     function index_post(){
-        // ja see on selle workaround
+
     }
 }

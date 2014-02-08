@@ -78,7 +78,7 @@
         <div class="span12">
             <div class="" id="loginModal">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <a id="close" href="<?= BASE_URL ?>" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
                     <h3>Oled juba kasutaja?</h3>
                 </div>
                 <div class="modal-body">
@@ -128,25 +128,6 @@
                                             </div>
                                         </div>
                                     </fieldset>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade" id="create">
-                                <form id="tab">
-                                    <label>Kasutaja</label>
-                                    <input type="text" value="" class="input-xlarge">
-                                    <label>Eesnimi</label>
-                                    <input type="text" value="" class="input-xlarge">
-                                    <label>Perenimi</label>
-                                    <input type="text" value="" class="input-xlarge">
-                                    <label>Email</label>
-                                    <input type="text" value="" class="input-xlarge">
-                                    <label>Address</label>
-                                    <textarea value="Smith" rows="3" class="input-xlarge">
-                                    </textarea>
-
-                                    <div>
-                                        <button class="btn btn-primary">Loo kasutaja</button>
-                                    </div>
                                 </form>
                             </div>
                         </div>
