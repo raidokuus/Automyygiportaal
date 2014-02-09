@@ -113,7 +113,7 @@
 
                                             <br/>
 
-                                            <label for="pass"><?__('Parool')?></label>
+                                            <label for="pass"><?__('Salasõna')?></label>
 
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="icon-key"></i></span>
@@ -128,6 +128,27 @@
                                             </div>
                                         </div>
                                     </fieldset>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="create">
+                                <form id="tab">
+                                    <label>Kasutaja</label>
+                                    <input type="text" value="" class="input-xlarge"><?=$user['username']?>
+                                    <label>Salasõna</label>
+                                    <input type="text" value="" class="input-xlarge"><?=$user['password']?>
+                                    <label>Eesnimi</label>
+                                    <input type="text" value="" class="input-xlarge"><?=$user['first_name']?>
+                                    <label>Perenimi</label>
+                                    <input type="text" value="" class="input-xlarge"><?=$user['last_name']?>
+                                    <label>Email</label>
+                                    <input type="text" value="" class="input-xlarge"><?=$user['email']?>
+                                    <label>Address</label>
+                                    <textarea value="Smith" rows="3" class="input-xlarge"><?=$user['address']?>
+                                    </textarea>
+
+                                    <div>
+                                        <a href="<?=BASE_URL?>/<?=$user['user_id']?>" class="btn btn-primary" role="button">Loo kasutaja</a>
+                                    </div>
                                 </form>
                             </div>
                         </div>
