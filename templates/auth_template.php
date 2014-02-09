@@ -4,9 +4,11 @@
 	<title><?= PROJECT_NAME ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?= ASSETS_URL ?>components/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-	<link href="<?= ASSETS_URL ?>css/application.css" rel="stylesheet">
+	<!-- <link href="<?= ASSETS_URL ?>css/application.css" rel="stylesheet"> -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="<?= ASSETS_URL ?>components/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<style>
 		body {
 			padding-top: 50px;
@@ -54,7 +56,7 @@
 		}
 
 		body {
-			background: url(<?= ASSETS_URL ?>img/bg.jpg);
+			/*background: url(<?= ASSETS_URL ?>img/bg.jpg);*/
 		}
 
 		span.input-group-addon {
@@ -132,8 +134,10 @@
                             </div>
                             <div class="tab-pane fade" id="create">
                                 <form id="tab">
-                                    <label>Kasutaja</label>
-                                    <input type="text" value="" class="input-xlarge"><?=$user['username']?>
+                                    <div class="input-group">
+                                        <label>Kasutaja</label>
+                                        <input type="text" value="" class="input-xlarge"><?=$user['username']?>
+                                    </div>
                                     <label>Salasõna</label>
                                     <input type="text" value="" class="input-xlarge"><?=$user['password']?>
                                     <label>Eesnimi</label>
