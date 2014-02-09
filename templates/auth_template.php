@@ -105,26 +105,19 @@
                                             <legend class="">Sisene</legend>
                                         </div>
                                         <div class="control-group">
-                                            <!-- Username -->
                                             <label for="user"><?__('Kasutaja')?></label>
-
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="icon-user"></i></span>
                                                 <input id="user" name="username" type="text" class="form-control" placeholder="kasutajatunnus">
                                             </div>
-
                                             <br/>
-
                                             <label for="pass"><?__('Salasõna')?></label>
-
                                             <div class="input-group">
                                                 <span class="input-group-addon"><i class="icon-key"></i></span>
                                                 <input id="pass" name="password" type="password" class="form-control" placeholder="******">
                                             </div>
                                             <br/>
-
                                         <div class="control-group">
-                                            <!-- Button -->
                                             <div class="controls">
                                                 <button class="btn btn-success">Sisene</button>
                                             </div>
@@ -133,25 +126,49 @@
                                 </form>
                             </div>
                             <div class="tab-pane fade" id="create">
-                                <form id="tab">
-                                    <div class="input-group">
-                                        <label>Kasutaja</label>
-                                        <input type="text" value="" class="input-xlarge"><?=$user['username']?>
-                                    </div>
-                                    <label>Salasõna</label>
-                                    <input type="text" value="" class="input-xlarge"><?=$user['password']?>
-                                    <label>Eesnimi</label>
-                                    <input type="text" value="" class="input-xlarge"><?=$user['first_name']?>
-                                    <label>Perenimi</label>
-                                    <input type="text" value="" class="input-xlarge"><?=$user['last_name']?>
-                                    <label>Email</label>
-                                    <input type="text" value="" class="input-xlarge"><?=$user['email']?>
-                                    <label>Address</label>
-                                    <textarea value="Smith" rows="3" class="input-xlarge"><?=$user['address']?>
-                                    </textarea>
+                                <div id="legend">
+                                    <legend class="">Registreeru</legend>
+                                </div>
 
+                                <form id="tab">
+                                    <label for="user"><?__('Kasutaja')?></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <input id="user" name="Kasutaja" type="text" class="form-control">
+                                    </div>
+                                    <br/>
+                                    <label for="pass"><?__('Salasõna')?></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-key"></i></span>
+                                        <input id="pass" name="password" type="password" class="form-control">
+                                    </div>
+                                    <br/>
+                                    <label for="first_name"><?__('Eesnimi')?></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <input id="first_name" name="first_name" type="text" class="form-control">
+                                    </div>
+                                    <br/>
+                                    <label for="last_name"><?__('Perenimi')?></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <input id="last_name" name="last_name" type="text" class="form-control">
+                                    </div>
+                                    <br/>
+                                    <label for="email"><?__('E-mail')?></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <input id="email" name="email" type="text" class="form-control">
+                                    </div>
+                                    <br/>
+                                    <label for="address"><?__('Aadress')?></label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <input id="address" name="address" type="text" class="form-control">
+                                    </div>
+                                    <br/>
                                     <div>
-                                        <a href="<?=BASE_URL?>/<?=$user['user_id']?>" class="btn btn-primary" role="button">Loo kasutaja</a>
+                                        <a href="<?=BASE_URL?>/<?=$user['user_id']?>" class="btn btn-success" role="button">Loo kasutaja</a>
                                     </div>
                                 </form>
                             </div>
