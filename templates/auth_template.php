@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="et">
+<html lang="en">
 <head>
 	<title><?= PROJECT_NAME ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -145,24 +145,26 @@
                                     <br/>
                                     <label for="first_name"><?__('Eesnimi')?></label>
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <span class="input-group-addon"><i class="icon-tasks"></i></span>
                                         <input id="first_name" name="first_name" type="text" class="form-control">
                                     </div>
                                     <br/>
                                     <label for="last_name"><?__('Perenimi')?></label>
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <span class="input-group-addon"><i class="icon-tasks"></i></span>
                                         <input id="last_name" name="last_name" type="text" class="form-control">
                                     </div>
                                     <br/>
                                     <label for="email"><?__('E-mail')?></label>
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <span class="input-group-addon"><i class="icon-envelope"></i></span>
                                         <input id="email" name="email" type="text" class="form-control">
                                     </div>
-                                    <br/> <br/>
+                                    <br/>
+                                    <p><span class="error">* nõutud väli.</span></p>
+                                    <br/>
                                     <div>
-                                        <a href="<?=BASE_URL?>/<?=$user['user_id']?>" class="btn btn-success" role="button">Loo kasutaja</a>
+                                        <a href="<?=BASE_URL?>/<?=$user['create']?>" class="btn btn-success" role="button">Loo kasutaja</a>
                                     </div>
                                 </form>
                             </div>
