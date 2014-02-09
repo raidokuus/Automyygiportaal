@@ -116,7 +116,7 @@
                                                 <span class="input-group-addon"><i class="icon-key"></i></span>
                                                 <input id="pass" name="password" type="password" class="form-control" placeholder="******">
                                             </div>
-                                            <br/>
+                                            <br/> <br/>
                                         <div class="control-group">
                                             <div class="controls">
                                                 <button class="btn btn-success">Sisene</button>
@@ -160,13 +160,7 @@
                                         <span class="input-group-addon"><i class="icon-user"></i></span>
                                         <input id="email" name="email" type="text" class="form-control">
                                     </div>
-                                    <br/>
-                                    <label for="address"><?__('Aadress')?></label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="icon-user"></i></span>
-                                        <input id="address" name="address" type="text" class="form-control">
-                                    </div>
-                                    <br/>
+                                    <br/> <br/>
                                     <div>
                                         <a href="<?=BASE_URL?>/<?=$user['user_id']?>" class="btn btn-success" role="button">Loo kasutaja</a>
                                     </div>
