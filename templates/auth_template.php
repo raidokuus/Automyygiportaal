@@ -130,41 +130,41 @@
                                     <legend class="">Registreeru</legend>
                                 </div>
 
-                                <form id="tab">
+                                <form id="tab" method="post" action="<?=BASE_URL ?>register">
                                     <label for="user"><?__('Kasutaja')?></label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="icon-user"></i></span>
-                                        <input id="user" name="Kasutaja" type="text" class="form-control">
+                                        <input id="user" name="data[username]" type="text" class="form-control">
                                     </div>
                                     <br/>
                                     <label for="pass"><?__('Salasõna')?></label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="icon-key"></i></span>
-                                        <input id="pass" name="password" type="password" class="form-control">
+                                        <input id="pass" name="data[password]" type="password" class="form-control">
                                     </div>
                                     <br/>
                                     <label for="first_name"><?__('Eesnimi')?></label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="icon-tasks"></i></span>
-                                        <input id="first_name" name="first_name" type="text" class="form-control">
+                                        <input id="first_name" name="data[first_name]" type="text" class="form-control">
                                     </div>
                                     <br/>
                                     <label for="last_name"><?__('Perenimi')?></label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="icon-tasks"></i></span>
-                                        <input id="last_name" name="last_name" type="text" class="form-control">
+                                        <input id="last_name" name="data[last_name]" type="text" class="form-control">
                                     </div>
                                     <br/>
                                     <label for="email"><?__('E-mail')?></label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="icon-envelope"></i></span>
-                                        <input id="email" name="email" type="text" class="form-control">
+                                        <input id="email" name="data[email]" type="text" class="form-control">
                                     </div>
                                     <br/>
                                     <p><span class="error">* nõutud väli.</span></p>
                                     <br/>
                                     <div>
-                                        <a href="<?=BASE_URL?>/<?=$user['create']?>" class="btn btn-success" role="button">Loo kasutaja</a>
+                                        <button class="btn btn-success" role="button">Loo kasutaja</button>
                                     </div>
                                 </form>
                             </div>
