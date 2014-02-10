@@ -3,17 +3,42 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2014 at 09:31 AM
+-- Generation Time: Feb 10, 2014 at 04:56 PM
 -- Server version: 5.5.34
 -- PHP Version: 5.4.22
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
 -- Database: `autoportaal`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `body_type`
+--
+
+DROP TABLE IF EXISTS `body_type`;
+CREATE TABLE IF NOT EXISTS `body_type` (
+  `body_type_id` int(10) NOT NULL AUTO_INCREMENT,
+  `body_type_name` varchar(32) NOT NULL,
+  PRIMARY KEY (`body_type_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `body_type`
+--
+
+INSERT INTO `body_type` (`body_type_id`, `body_type_name`) VALUES
+(1, 'Sedaan'),
+(2, 'Luukpära'),
+(3, 'Universaal'),
+(4, 'Mahtuniversaal'),
+(5, 'Kupee'),
+(6, 'Kabriolett'),
+(7, 'Pikap');
 
 -- --------------------------------------------------------
 
@@ -46,6 +71,89 @@ INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kuulutus`
+--
+
+DROP TABLE IF EXISTS `kuulutus`;
+CREATE TABLE IF NOT EXISTS `kuulutus` (
+  `body_type` varchar(32) NOT NULL,
+  `make` int(11) unsigned NOT NULL,
+  `price` int(10) NOT NULL,
+  `fuel_type` varchar(32) NOT NULL,
+  PRIMARY KEY (`body_type`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `make`
+--
+
+DROP TABLE IF EXISTS `make`;
+CREATE TABLE IF NOT EXISTS `make` (
+  `make_id` int(10) NOT NULL AUTO_INCREMENT,
+  `make_name` varchar(32) NOT NULL,
+  PRIMARY KEY (`make_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
+
+--
+-- Dumping data for table `make`
+--
+
+INSERT INTO `make` (`make_id`, `make_name`) VALUES
+(1, 'Alfa Romeo'),
+(2, 'Audi'),
+(3, 'Bentley'),
+(4, 'BMW'),
+(5, 'Cadillac'),
+(6, 'Chevrolet'),
+(7, 'Chrysler'),
+(8, 'Citroen'),
+(9, 'Dacia'),
+(10, 'Daewoo'),
+(11, 'Dodge'),
+(12, 'Ferrari'),
+(13, 'Fiat'),
+(14, 'Ford'),
+(15, 'Honda'),
+(16, 'Hummer'),
+(17, 'Hyundai'),
+(18, 'Jaguar'),
+(19, 'Jeep'),
+(20, 'Kia'),
+(21, 'Lada'),
+(22, 'Lamborghini'),
+(23, 'Lancia'),
+(24, 'Land Rover'),
+(25, 'Lexus'),
+(26, 'Lotus'),
+(27, 'Maserati'),
+(28, 'Mazda'),
+(29, 'Mercedes-Benz'),
+(30, 'Mitshubishi'),
+(31, 'Moskvich'),
+(32, 'Nissan'),
+(33, 'Opel'),
+(34, 'Peugeot'),
+(35, 'Pontiac'),
+(36, 'Porche'),
+(37, 'Renault'),
+(38, 'Rolls-Royce'),
+(39, 'Rover'),
+(40, 'Saab'),
+(41, 'SEAT'),
+(42, 'Skoda'),
+(43, 'Subaru'),
+(44, 'Suzuki'),
+(45, 'Toyota'),
+(46, 'UAZ'),
+(47, 'Volkswagen'),
+(48, 'Volvo'),
+(49, 'GAZ');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -59,12 +167,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_name` varchar(32) NOT NULL,
   `email` varchar(1024) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, `last_name`, `email`) VALUES
-(1, 'demo', 'demo', 0, '', '', '');
-SET FOREIGN_KEY_CHECKS=1;
+(1, 'demo', 'demo', 0, '', '', ''),
+(2, 'Lenard', '123456', 0, 'Lenard', 'Lätte', 'lenard@buytec.eu');
