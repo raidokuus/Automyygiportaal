@@ -1,12 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.2.0-dev
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 10, 2014 at 04:56 PM
--- Server version: 5.5.34
--- PHP Version: 5.4.22
+-- Host: localhost
+-- Generation Time: Feb 10, 2014 at 05:53 PM
+-- Server version: 5.5.27
+-- PHP Version: 5.4.7
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -22,9 +23,8 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `body_type`;
 CREATE TABLE IF NOT EXISTS `body_type` (
-  `body_type_id` int(10) NOT NULL AUTO_INCREMENT,
-  `body_type_name` varchar(32) NOT NULL,
-  PRIMARY KEY (`body_type_id`)
+`body_type_id` int(10) NOT NULL,
+  `body_type_name` varchar(32) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
@@ -48,15 +48,13 @@ INSERT INTO `body_type` (`body_type_id`, `body_type_name`) VALUES
 
 DROP TABLE IF EXISTS `car`;
 CREATE TABLE IF NOT EXISTS `car` (
-  `car_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`car_id` int(10) unsigned NOT NULL,
   `car_title` varchar(255) COLLATE utf8mb4_estonian_ci NOT NULL,
   `car_info` text COLLATE utf8mb4_estonian_ci NOT NULL,
   `car_vin` int(11) NOT NULL,
   `car_img` varchar(255) COLLATE utf8mb4_estonian_ci NOT NULL,
   `car_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `user_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`car_id`),
-  KEY `user_id` (`user_id`)
+  `user_id` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_estonian_ci AUTO_INCREMENT=4 ;
 
 --
@@ -71,6 +69,28 @@ INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `fuel_type`
+--
+
+DROP TABLE IF EXISTS `fuel_type`;
+CREATE TABLE IF NOT EXISTS `fuel_type` (
+`fuel_type_id` int(11) NOT NULL,
+  `fuel_type_name` varchar(32) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `fuel_type`
+--
+
+INSERT INTO `fuel_type` (`fuel_type_id`, `fuel_type_name`) VALUES
+(1, 'Bensiin'),
+(2, 'Diisel'),
+(3, 'Hübriid'),
+(4, 'Elekter');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `kuulutus`
 --
 
@@ -79,8 +99,7 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `body_type` varchar(32) NOT NULL,
   `make` int(11) unsigned NOT NULL,
   `price` int(10) NOT NULL,
-  `fuel_type` varchar(32) NOT NULL,
-  PRIMARY KEY (`body_type`)
+  `fuel_type` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -91,9 +110,8 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
 
 DROP TABLE IF EXISTS `make`;
 CREATE TABLE IF NOT EXISTS `make` (
-  `make_id` int(10) NOT NULL AUTO_INCREMENT,
-  `make_name` varchar(32) NOT NULL,
-  PRIMARY KEY (`make_id`)
+`make_id` int(10) NOT NULL,
+  `make_name` varchar(32) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
@@ -159,14 +177,13 @@ INSERT INTO `make` (`make_id`, `make_name`) VALUES
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`user_id` int(10) unsigned NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(32) NOT NULL,
   `deleted` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `first_name` varchar(32) NOT NULL,
   `last_name` varchar(32) NOT NULL,
-  `email` varchar(1024) NOT NULL,
-  PRIMARY KEY (`user_id`)
+  `email` varchar(1024) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
@@ -176,3 +193,73 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, `last_name`, `email`) VALUES
 (1, 'demo', 'demo', 0, '', '', ''),
 (2, 'Lenard', '123456', 0, 'Lenard', 'Lätte', 'lenard@buytec.eu');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `body_type`
+--
+ALTER TABLE `body_type`
+ ADD PRIMARY KEY (`body_type_id`);
+
+--
+-- Indexes for table `car`
+--
+ALTER TABLE `car`
+ ADD PRIMARY KEY (`car_id`), ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `fuel_type`
+--
+ALTER TABLE `fuel_type`
+ ADD PRIMARY KEY (`fuel_type_id`);
+
+--
+-- Indexes for table `kuulutus`
+--
+ALTER TABLE `kuulutus`
+ ADD PRIMARY KEY (`body_type`);
+
+--
+-- Indexes for table `make`
+--
+ALTER TABLE `make`
+ ADD PRIMARY KEY (`make_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+ ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `body_type`
+--
+ALTER TABLE `body_type`
+MODIFY `body_type_id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `car`
+--
+ALTER TABLE `car`
+MODIFY `car_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `fuel_type`
+--
+ALTER TABLE `fuel_type`
+MODIFY `fuel_type_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `make`
+--
+ALTER TABLE `make`
+MODIFY `make_id` int(10) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+MODIFY `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT;SET FOREIGN_KEY_CHECKS=1;

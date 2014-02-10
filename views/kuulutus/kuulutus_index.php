@@ -24,6 +24,13 @@
                         <option value="<?= $body_type['body_type_id'] ?>"><?= $body_type['body_type_name'] ?></option>
                     <? endforeach ?>
                 </select>
+                    </br>
+                <label class="control-label">Kütus</label>
+                <select>
+                    <? foreach ($fuel_type_index as $fuel_type): ?>
+                        <option value="<?= $fuel_type['fuel_type_id'] ?>"><?= $fuel_type['fuel_type_name'] ?></option>
+                    <? endforeach ?>
+                </select>
                 </div>
             </div>
         </div>
