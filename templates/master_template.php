@@ -46,6 +46,7 @@
 			<ul class="nav navbar-nav">
 				<li <?= $controller == 'welcome' ? 'class="active"' : '' ?>><a href="<?=BASE_URL?>">Avaleht</a></li>
 				<li <?= $controller == 'cars' ? 'class="active"' : '' ?>><a href="<?=BASE_URL?>cars">Autod</a></li>
+                <li><a href="<?=BASE_URL?>search">Otsing</a></li>
 <!-- 				<li><a href="#contact">Contact</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
