@@ -9,6 +9,7 @@ class kuulutus extends Controller{
         $this->year_index = get_all('SELECT * FROM year');
         $this->gearbox_index = get_all('SELECT * FROM gearbox');
         $this->color_index = get_all('SELECT * FROM color');
+        $this->vin_index = get_all('SELECT * FROM vin');
     }
     function index_post(){
         $this->success = insert('kuulutus', $_POST['data']);

@@ -52,7 +52,12 @@
                             <option value="<?= $color_type['color_id'] ?>"><?= $color_type['color_name'] ?></option>
                         <? endforeach ?>
                 </select>
-
+                    </br>
+                <label class="control-label">VIN-kood</label>
+                <input>
+                    <? foreach ($vin_index as $vin_type): ?>
+                        <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
+                    <? endforeach ?>
                 </div>
             </div>
         </div>

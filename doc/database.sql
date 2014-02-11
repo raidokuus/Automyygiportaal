@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 11, 2014 kell 09:41 PM
+-- Loomise aeg: Veebr 11, 2014 kell 10:09 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -163,6 +163,7 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `year` int(5) NOT NULL,
   `gearbox` int(10) NOT NULL,
   `color` varchar(30) NOT NULL,
+  `vin` int(10) NOT NULL,
   PRIMARY KEY (`body_type`),
   UNIQUE KEY `year` (`year`),
   UNIQUE KEY `year_2` (`year`),
@@ -267,6 +268,19 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, `last_name`, `email`) VALUES
 (1, 'demo', 'demo', 0, '', '', ''),
 (2, 'Lenard', '123456', 0, 'Lenard', 'Lätte', 'lenard@buytec.eu');
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `vin`
+--
+
+DROP TABLE IF EXISTS `vin`;
+CREATE TABLE IF NOT EXISTS `vin` (
+  `vin_id` int(10) NOT NULL,
+  `vin_name` int(32) NOT NULL,
+  PRIMARY KEY (`vin_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
