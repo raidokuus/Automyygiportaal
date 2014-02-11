@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 11, 2014 kell 10:19 PM
+-- Loomise aeg: Veebr 11, 2014 kell 10:56 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -165,6 +165,8 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `color` varchar(30) NOT NULL,
   `vin` int(10) NOT NULL,
   `reg` int(10) NOT NULL,
+  `motion` int(10) NOT NULL,
+  `muu` int(10) NOT NULL,
   PRIMARY KEY (`body_type`),
   UNIQUE KEY `year` (`year`),
   UNIQUE KEY `year_2` (`year`),
@@ -247,6 +249,41 @@ INSERT INTO `make` (`make_id`, `make_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabeli struktuur tabelile `motion`
+--
+
+DROP TABLE IF EXISTS `motion`;
+CREATE TABLE IF NOT EXISTS `motion` (
+  `motion_id` int(10) NOT NULL AUTO_INCREMENT,
+  `motion_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`motion_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Andmete tõmmistamine tabelile `motion`
+--
+
+INSERT INTO `motion` (`motion_id`, `motion_name`) VALUES
+(1, 'esivedu'),
+(2, 'tagavedu'),
+(3, 'nelikvedu');
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `muu`
+--
+
+DROP TABLE IF EXISTS `muu`;
+CREATE TABLE IF NOT EXISTS `muu` (
+  `muu_id` int(11) NOT NULL AUTO_INCREMENT,
+  `muu_name` varchar(200) NOT NULL,
+  PRIMARY KEY (`muu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Tabeli struktuur tabelile `reg`
 --
 
@@ -291,10 +328,10 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, 
 
 DROP TABLE IF EXISTS `vin`;
 CREATE TABLE IF NOT EXISTS `vin` (
-  `vin_id` int(10) NOT NULL,
+  `vin_id` int(10) NOT NULL AUTO_INCREMENT,
   `vin_name` int(32) NOT NULL,
   PRIMARY KEY (`vin_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 

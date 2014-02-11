@@ -11,6 +11,8 @@ class kuulutus extends Controller{
         $this->color_index = get_all('SELECT * FROM color');
         $this->vin_index = get_all('SELECT * FROM vin');
         $this->reg_index = get_all('SELECT * FROM reg');
+        $this->motion_index = get_all('SELECT * FROM motion');
+        $this->muu_index = get_all('SELECT * FROM muu');
     }
     function index_post(){
         $this->success = insert('kuulutus', $_POST['data']);

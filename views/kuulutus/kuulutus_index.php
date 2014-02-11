@@ -60,10 +60,23 @@
                     <? endforeach ?>
                     </br>
                 <label class="control-label">Reg.number</label>
-                <input>
-                    <?echo "näide: 123ABC" ?>
+                <input placeholder="näide:123ABC">
                     <? foreach ($reg_index as $reg_type): ?>
                         <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
+                    <? endforeach ?>
+                </br>
+                <label class="control-label">Vedav sild:</label>
+                <select>
+                        <? foreach ($motion_index as $motion_type): ?>
+                            <option value="<?= $motion_type['motion_id'] ?>"><?= $motion_type['motion_name'] ?></option>
+                        <? endforeach ?>
+                </select>
+                    </br>
+                 <label class="control-label">Muu:</label>
+                    <textarea class="form-control" rows="4"></textarea>
+                    <? foreach ($muu_index as $muu_type): ?>
+                        <input value="<?= $muu_type['muu_id'] ?>"><?= $muu_type['muu_name'] ?>
+
                     <? endforeach ?>
                 </div>
             </div>
