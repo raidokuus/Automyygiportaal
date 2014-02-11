@@ -58,6 +58,13 @@
                     <? foreach ($vin_index as $vin_type): ?>
                         <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
                     <? endforeach ?>
+                    </br>
+                <label class="control-label">Reg.number</label>
+                <input>
+                    <?echo "näide: 123ABC" ?>
+                    <? foreach ($reg_index as $reg_type): ?>
+                        <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
+                    <? endforeach ?>
                 </div>
             </div>
         </div>

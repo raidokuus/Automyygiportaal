@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 11, 2014 kell 10:09 PM
+-- Loomise aeg: Veebr 11, 2014 kell 10:19 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -164,6 +164,7 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `gearbox` int(10) NOT NULL,
   `color` varchar(30) NOT NULL,
   `vin` int(10) NOT NULL,
+  `reg` int(10) NOT NULL,
   PRIMARY KEY (`body_type`),
   UNIQUE KEY `year` (`year`),
   UNIQUE KEY `year_2` (`year`),
@@ -242,6 +243,19 @@ INSERT INTO `make` (`make_id`, `make_name`) VALUES
 (47, 'Volkswagen'),
 (48, 'Volvo'),
 (49, 'GAZ');
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `reg`
+--
+
+DROP TABLE IF EXISTS `reg`;
+CREATE TABLE IF NOT EXISTS `reg` (
+  `reg_id` int(10) NOT NULL AUTO_INCREMENT,
+  `reg_name` int(10) NOT NULL,
+  PRIMARY KEY (`reg_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
