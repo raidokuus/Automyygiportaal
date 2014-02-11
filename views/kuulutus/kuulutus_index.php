@@ -31,6 +31,26 @@
                         <option value="<?= $fuel_type['fuel_type_id'] ?>"><?= $fuel_type['fuel_type_name'] ?></option>
                     <? endforeach ?>
                 </select>
+                    </br>
+                <label class="control-label">Aasta</label>
+                <select>
+                    <? foreach ($year_index as $year_type): ?>
+                        <option value="<?= $year_type['year_id'] ?>"><?= $year_type['year_name'] ?></option>
+                    <? endforeach ?>
+                </select>
+                <label class="control-label">kuni</label>
+                    <select>
+                    <? foreach ($year_index as $year_type): ?>
+                        <option value="<?= $year_type['year_id'] ?>"><?= $year_type['year_name'] ?></option>
+                    <? endforeach ?>
+                    </select>
+                    </br>
+                <label class="control-label">Käigukast</label>
+                <select>
+                        <? foreach ($gearbox_index as $gearbox_type): ?>
+                            <option value="<?= $gearbox_type['gearbox_id'] ?>"><?= $gearbox_type['gearbox_name'] ?></option>
+                        <? endforeach ?>
+                </select>
                 </div>
             </div>
         </div>

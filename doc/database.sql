@@ -1,34 +1,35 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.0-dev
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Feb 10, 2014 at 05:53 PM
--- Server version: 5.5.27
--- PHP Version: 5.4.7
+-- Host: 127.0.0.1
+-- Loomise aeg: Veebr 11, 2014 kell 08:52 PM
+-- Serveri versioon: 5.5.34
+-- PHP versioon: 5.4.22
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `autoportaal`
+-- Andmebaas: `autoportaal`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `body_type`
+-- Tabeli struktuur tabelile `body_type`
 --
 
 DROP TABLE IF EXISTS `body_type`;
 CREATE TABLE IF NOT EXISTS `body_type` (
-`body_type_id` int(10) NOT NULL,
-  `body_type_name` varchar(32) NOT NULL
+  `body_type_id` int(10) NOT NULL AUTO_INCREMENT,
+  `body_type_name` varchar(32) NOT NULL,
+  PRIMARY KEY (`body_type_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data for table `body_type`
+-- Andmete tõmmistamine tabelile `body_type`
 --
 
 INSERT INTO `body_type` (`body_type_id`, `body_type_name`) VALUES
@@ -43,22 +44,24 @@ INSERT INTO `body_type` (`body_type_id`, `body_type_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `car`
+-- Tabeli struktuur tabelile `car`
 --
 
 DROP TABLE IF EXISTS `car`;
 CREATE TABLE IF NOT EXISTS `car` (
-`car_id` int(10) unsigned NOT NULL,
+  `car_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `car_title` varchar(255) COLLATE utf8mb4_estonian_ci NOT NULL,
   `car_info` text COLLATE utf8mb4_estonian_ci NOT NULL,
   `car_vin` int(11) NOT NULL,
   `car_img` varchar(255) COLLATE utf8mb4_estonian_ci NOT NULL,
   `car_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `user_id` int(10) unsigned NOT NULL
+  `user_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`car_id`),
+  KEY `user_id` (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_estonian_ci AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `car`
+-- Andmete tõmmistamine tabelile `car`
 --
 
 INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car_created`, `user_id`) VALUES
@@ -69,17 +72,18 @@ INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fuel_type`
+-- Tabeli struktuur tabelile `fuel_type`
 --
 
 DROP TABLE IF EXISTS `fuel_type`;
 CREATE TABLE IF NOT EXISTS `fuel_type` (
-`fuel_type_id` int(11) NOT NULL,
-  `fuel_type_name` varchar(32) NOT NULL
+  `fuel_type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fuel_type_name` varchar(32) NOT NULL,
+  PRIMARY KEY (`fuel_type_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Dumping data for table `fuel_type`
+-- Andmete tõmmistamine tabelile `fuel_type`
 --
 
 INSERT INTO `fuel_type` (`fuel_type_id`, `fuel_type_name`) VALUES
@@ -91,7 +95,18 @@ INSERT INTO `fuel_type` (`fuel_type_id`, `fuel_type_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kuulutus`
+-- Tabeli struktuur tabelile `gearbox`
+--
+
+DROP TABLE IF EXISTS `gearbox`;
+CREATE TABLE IF NOT EXISTS `gearbox` (
+  `gearbox_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `kuulutus`
 --
 
 DROP TABLE IF EXISTS `kuulutus`;
@@ -99,23 +114,28 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `body_type` varchar(32) NOT NULL,
   `make` int(11) unsigned NOT NULL,
   `price` int(10) NOT NULL,
-  `fuel_type` varchar(32) NOT NULL
+  `fuel_type` varchar(32) NOT NULL,
+  `year` int(5) NOT NULL,
+  PRIMARY KEY (`body_type`),
+  UNIQUE KEY `year` (`year`),
+  KEY `fuel_type` (`fuel_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `make`
+-- Tabeli struktuur tabelile `make`
 --
 
 DROP TABLE IF EXISTS `make`;
 CREATE TABLE IF NOT EXISTS `make` (
-`make_id` int(10) NOT NULL,
-  `make_name` varchar(32) NOT NULL
+  `make_id` int(10) NOT NULL AUTO_INCREMENT,
+  `make_name` varchar(32) NOT NULL,
+  PRIMARY KEY (`make_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
--- Dumping data for table `make`
+-- Andmete tõmmistamine tabelile `make`
 --
 
 INSERT INTO `make` (`make_id`, `make_name`) VALUES
@@ -172,94 +192,114 @@ INSERT INTO `make` (`make_id`, `make_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Tabeli struktuur tabelile `user`
 --
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
-`user_id` int(10) unsigned NOT NULL,
+  `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
   `password` varchar(32) NOT NULL,
   `deleted` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `first_name` varchar(32) NOT NULL,
   `last_name` varchar(32) NOT NULL,
-  `email` varchar(1024) NOT NULL
+  `email` varchar(1024) NOT NULL,
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Dumping data for table `user`
+-- Andmete tõmmistamine tabelile `user`
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, `last_name`, `email`) VALUES
 (1, 'demo', 'demo', 0, '', '', ''),
 (2, 'Lenard', '123456', 0, 'Lenard', 'Lätte', 'lenard@buytec.eu');
 
---
--- Indexes for dumped tables
---
+-- --------------------------------------------------------
 
 --
--- Indexes for table `body_type`
---
-ALTER TABLE `body_type`
- ADD PRIMARY KEY (`body_type_id`);
-
---
--- Indexes for table `car`
---
-ALTER TABLE `car`
- ADD PRIMARY KEY (`car_id`), ADD KEY `user_id` (`user_id`);
-
---
--- Indexes for table `fuel_type`
---
-ALTER TABLE `fuel_type`
- ADD PRIMARY KEY (`fuel_type_id`);
-
---
--- Indexes for table `kuulutus`
---
-ALTER TABLE `kuulutus`
- ADD PRIMARY KEY (`body_type`);
-
---
--- Indexes for table `make`
---
-ALTER TABLE `make`
- ADD PRIMARY KEY (`make_id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
- ADD PRIMARY KEY (`user_id`);
-
---
--- AUTO_INCREMENT for dumped tables
+-- Tabeli struktuur tabelile `year`
 --
 
+DROP TABLE IF EXISTS `year`;
+CREATE TABLE IF NOT EXISTS `year` (
+  `year_id` int(7) NOT NULL AUTO_INCREMENT,
+  `year_algus` varchar(15) NOT NULL,
+  `year_name` int(5) NOT NULL,
+  PRIMARY KEY (`year_id`),
+  KEY `year_name` (`year_name`),
+  KEY `year_name_2` (`year_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
+
 --
--- AUTO_INCREMENT for table `body_type`
+-- Andmete tõmmistamine tabelile `year`
 --
-ALTER TABLE `body_type`
-MODIFY `body_type_id` int(10) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `car`
---
-ALTER TABLE `car`
-MODIFY `car_id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `fuel_type`
---
-ALTER TABLE `fuel_type`
-MODIFY `fuel_type_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `make`
---
-ALTER TABLE `make`
-MODIFY `make_id` int(10) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-MODIFY `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT;SET FOREIGN_KEY_CHECKS=1;
+
+INSERT INTO `year` (`year_id`, `year_algus`, `year_name`) VALUES
+(1, 'Vali aasta', 0),
+(2, '', 1950),
+(3, '', 1951),
+(4, '', 1952),
+(5, '', 1953),
+(6, '', 1954),
+(7, '', 1955),
+(8, '', 1956),
+(9, '', 1957),
+(10, '', 1958),
+(11, '', 1959),
+(12, '', 1960),
+(13, '', 1961),
+(14, '', 1962),
+(15, '', 1963),
+(16, '', 1964),
+(17, '', 1965),
+(18, '', 1966),
+(19, '', 1967),
+(20, '', 1968),
+(21, '', 1969),
+(22, '', 1970),
+(23, '', 1971),
+(24, '', 1972),
+(25, '', 1973),
+(26, '', 1974),
+(27, '', 1975),
+(28, '', 1976),
+(29, '', 1977),
+(30, '', 1978),
+(31, '', 1979),
+(32, '', 1980),
+(33, '', 1981),
+(34, '', 1982),
+(35, '', 1983),
+(36, '', 1984),
+(37, '', 1985),
+(38, '', 1986),
+(39, '', 1987),
+(40, '', 1988),
+(41, '', 1989),
+(42, '', 1990),
+(43, '', 1991),
+(44, '', 1992),
+(45, '', 1993),
+(46, '', 1994),
+(47, '', 1995),
+(48, '', 1996),
+(49, '', 1997),
+(50, '', 1998),
+(51, '', 1999),
+(52, '', 2000),
+(53, '', 2001),
+(54, '', 2002),
+(55, '', 2003),
+(56, '', 2004),
+(57, '', 2005),
+(58, '', 2006),
+(59, '', 2007),
+(60, '', 2008),
+(61, '', 2009),
+(62, '', 2010),
+(63, '', 2011),
+(64, '', 2012),
+(65, '', 2013),
+(66, '', 2014);
+SET FOREIGN_KEY_CHECKS=1;
