@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 11, 2014 kell 08:52 PM
+-- Loomise aeg: Veebr 11, 2014 kell 09:01 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -236,7 +236,6 @@ CREATE TABLE IF NOT EXISTS `year` (
 --
 
 INSERT INTO `year` (`year_id`, `year_algus`, `year_name`) VALUES
-(1, 'Vali aasta', 0),
 (2, '', 1950),
 (3, '', 1951),
 (4, '', 1952),

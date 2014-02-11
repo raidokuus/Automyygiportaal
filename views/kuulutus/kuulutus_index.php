@@ -38,12 +38,6 @@
                         <option value="<?= $year_type['year_id'] ?>"><?= $year_type['year_name'] ?></option>
                     <? endforeach ?>
                 </select>
-                <label class="control-label">kuni</label>
-                    <select>
-                    <? foreach ($year_index as $year_type): ?>
-                        <option value="<?= $year_type['year_id'] ?>"><?= $year_type['year_name'] ?></option>
-                    <? endforeach ?>
-                    </select>
                     </br>
                 <label class="control-label">Käigukast</label>
                 <select>
