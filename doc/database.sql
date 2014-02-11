@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 11, 2014 kell 09:01 PM
+-- Loomise aeg: Veebr 11, 2014 kell 09:41 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -72,6 +72,38 @@ INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car
 -- --------------------------------------------------------
 
 --
+-- Tabeli struktuur tabelile `color`
+--
+
+DROP TABLE IF EXISTS `color`;
+CREATE TABLE IF NOT EXISTS `color` (
+  `color_id` int(10) NOT NULL AUTO_INCREMENT,
+  `color_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`color_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
+
+--
+-- Andmete tõmmistamine tabelile `color`
+--
+
+INSERT INTO `color` (`color_id`, `color_name`) VALUES
+(1, 'beež'),
+(2, 'hall'),
+(3, 'kollane'),
+(4, 'kuldne'),
+(5, 'lilla'),
+(6, 'must'),
+(7, 'oranž'),
+(8, 'pruun'),
+(9, 'punane'),
+(10, 'roheline'),
+(11, 'roosa'),
+(12, 'sinine'),
+(13, 'valge');
+
+-- --------------------------------------------------------
+
+--
 -- Tabeli struktuur tabelile `fuel_type`
 --
 
@@ -100,8 +132,21 @@ INSERT INTO `fuel_type` (`fuel_type_id`, `fuel_type_name`) VALUES
 
 DROP TABLE IF EXISTS `gearbox`;
 CREATE TABLE IF NOT EXISTS `gearbox` (
-  `gearbox_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `gearbox_id` int(11) NOT NULL AUTO_INCREMENT,
+  `gearbox_name` varchar(15) NOT NULL,
+  PRIMARY KEY (`gearbox_id`),
+  KEY `gearbox_name` (`gearbox_name`),
+  KEY `gearbox_name_2` (`gearbox_name`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Andmete tõmmistamine tabelile `gearbox`
+--
+
+INSERT INTO `gearbox` (`gearbox_id`, `gearbox_name`) VALUES
+(3, 'automaat'),
+(2, 'manuaal'),
+(4, 'poolautomaat');
 
 -- --------------------------------------------------------
 
@@ -116,9 +161,17 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `price` int(10) NOT NULL,
   `fuel_type` varchar(32) NOT NULL,
   `year` int(5) NOT NULL,
+  `gearbox` int(10) NOT NULL,
+  `color` varchar(30) NOT NULL,
   PRIMARY KEY (`body_type`),
   UNIQUE KEY `year` (`year`),
-  KEY `fuel_type` (`fuel_type`)
+  UNIQUE KEY `year_2` (`year`),
+  UNIQUE KEY `year_3` (`year`),
+  UNIQUE KEY `body_type` (`body_type`),
+  UNIQUE KEY `year_4` (`year`),
+  UNIQUE KEY `body_type_2` (`body_type`),
+  KEY `fuel_type` (`fuel_type`),
+  KEY `body_type_3` (`body_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -224,7 +277,6 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, 
 DROP TABLE IF EXISTS `year`;
 CREATE TABLE IF NOT EXISTS `year` (
   `year_id` int(7) NOT NULL AUTO_INCREMENT,
-  `year_algus` varchar(15) NOT NULL,
   `year_name` int(5) NOT NULL,
   PRIMARY KEY (`year_id`),
   KEY `year_name` (`year_name`),
@@ -235,70 +287,70 @@ CREATE TABLE IF NOT EXISTS `year` (
 -- Andmete tõmmistamine tabelile `year`
 --
 
-INSERT INTO `year` (`year_id`, `year_algus`, `year_name`) VALUES
-(2, '', 1950),
-(3, '', 1951),
-(4, '', 1952),
-(5, '', 1953),
-(6, '', 1954),
-(7, '', 1955),
-(8, '', 1956),
-(9, '', 1957),
-(10, '', 1958),
-(11, '', 1959),
-(12, '', 1960),
-(13, '', 1961),
-(14, '', 1962),
-(15, '', 1963),
-(16, '', 1964),
-(17, '', 1965),
-(18, '', 1966),
-(19, '', 1967),
-(20, '', 1968),
-(21, '', 1969),
-(22, '', 1970),
-(23, '', 1971),
-(24, '', 1972),
-(25, '', 1973),
-(26, '', 1974),
-(27, '', 1975),
-(28, '', 1976),
-(29, '', 1977),
-(30, '', 1978),
-(31, '', 1979),
-(32, '', 1980),
-(33, '', 1981),
-(34, '', 1982),
-(35, '', 1983),
-(36, '', 1984),
-(37, '', 1985),
-(38, '', 1986),
-(39, '', 1987),
-(40, '', 1988),
-(41, '', 1989),
-(42, '', 1990),
-(43, '', 1991),
-(44, '', 1992),
-(45, '', 1993),
-(46, '', 1994),
-(47, '', 1995),
-(48, '', 1996),
-(49, '', 1997),
-(50, '', 1998),
-(51, '', 1999),
-(52, '', 2000),
-(53, '', 2001),
-(54, '', 2002),
-(55, '', 2003),
-(56, '', 2004),
-(57, '', 2005),
-(58, '', 2006),
-(59, '', 2007),
-(60, '', 2008),
-(61, '', 2009),
-(62, '', 2010),
-(63, '', 2011),
-(64, '', 2012),
-(65, '', 2013),
-(66, '', 2014);
+INSERT INTO `year` (`year_id`, `year_name`) VALUES
+(2, 1950),
+(3, 1951),
+(4, 1952),
+(5, 1953),
+(6, 1954),
+(7, 1955),
+(8, 1956),
+(9, 1957),
+(10, 1958),
+(11, 1959),
+(12, 1960),
+(13, 1961),
+(14, 1962),
+(15, 1963),
+(16, 1964),
+(17, 1965),
+(18, 1966),
+(19, 1967),
+(20, 1968),
+(21, 1969),
+(22, 1970),
+(23, 1971),
+(24, 1972),
+(25, 1973),
+(26, 1974),
+(27, 1975),
+(28, 1976),
+(29, 1977),
+(30, 1978),
+(31, 1979),
+(32, 1980),
+(33, 1981),
+(34, 1982),
+(35, 1983),
+(36, 1984),
+(37, 1985),
+(38, 1986),
+(39, 1987),
+(40, 1988),
+(41, 1989),
+(42, 1990),
+(43, 1991),
+(44, 1992),
+(45, 1993),
+(46, 1994),
+(47, 1995),
+(48, 1996),
+(49, 1997),
+(50, 1998),
+(51, 1999),
+(52, 2000),
+(53, 2001),
+(54, 2002),
+(55, 2003),
+(56, 2004),
+(57, 2005),
+(58, 2006),
+(59, 2007),
+(60, 2008),
+(61, 2009),
+(62, 2010),
+(63, 2011),
+(64, 2012),
+(65, 2013),
+(66, 2014);
 SET FOREIGN_KEY_CHECKS=1;

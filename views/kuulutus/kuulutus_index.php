@@ -45,6 +45,14 @@
                             <option value="<?= $gearbox_type['gearbox_id'] ?>"><?= $gearbox_type['gearbox_name'] ?></option>
                         <? endforeach ?>
                 </select>
+                    </br>
+                <label class="control-label">Värv</label>
+                <select>
+                        <? foreach ($color_index as $color_type): ?>
+                            <option value="<?= $color_type['color_id'] ?>"><?= $color_type['color_name'] ?></option>
+                        <? endforeach ?>
+                </select>
+
                 </div>
             </div>
         </div>
