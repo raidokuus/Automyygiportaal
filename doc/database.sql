@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 12, 2014 kell 09:56 AM
+-- Loomise aeg: Veebr 12, 2014 kell 10:10 AM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -280,6 +280,19 @@ INSERT INTO `gearbox` (`gearbox_id`, `gearbox_name`) VALUES
 (3, 'automaat'),
 (2, 'manuaal'),
 (4, 'poolautomaat');
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `km`
+--
+
+DROP TABLE IF EXISTS `km`;
+CREATE TABLE IF NOT EXISTS `km` (
+  `km_id` int(15) NOT NULL AUTO_INCREMENT,
+  `km_name` int(15) NOT NULL,
+  PRIMARY KEY (`km_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
