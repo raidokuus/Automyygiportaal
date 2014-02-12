@@ -16,6 +16,9 @@ class kuulutus extends Controller{
         $this->country_index = get_all('SELECT * FROM country');
         $this->city_index = get_all('SELECT * FROM city');
         $this->km_index = get_all('SELECT * FROM km');
+        $this->kw_index = get_all('SELECT * FROM kw');
+        $this->door_index = get_all('SELECT * FROM door');
+        $this->price_index = get_all('SELECT * FROM price');
     }
     function index_post(){
         $this->success = insert('kuulutus', $_POST['data']);

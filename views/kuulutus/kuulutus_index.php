@@ -1,6 +1,7 @@
 <div class="container">
     <div class="modal-header">
         <a id="close" href="<?= BASE_URL ?>" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
+
         <h3>Lisa kuulutus</h3>
     </div>
     <div class="row">
@@ -90,6 +91,24 @@
                                         <? endforeach ?>
                                     </select>
                                     </br>
+                                    <label class="control-label">Uste arv:</label>
+                                    <select>
+                                        <option selected="selected" disabled="disabled">---</option>
+                                        <? foreach ($door_index as $door_type): ?>
+                                            <option
+                                                value="<?= $door_type['door_id'] ?>"><?= $door_type['door_name'] ?></option>
+                                        <? endforeach ?>
+                                    </select>
+                                    </br>
+                                    <label class="control-label">Hind:</label>
+                                    <input>
+                                    <? foreach ($price_index as $price_type): ?>
+                                        <div class="input-group">
+                                            <input
+                                                value="<?= $price_type['price_id'] ?>"><?= $price_type['price_name'] ?>
+                                        </div>
+                                    <? endforeach ?>
+                                    </br>
                                     <label class="control-label">Käigukast:</label>
                                     <select>
                                         <option selected="selected" disabled="disabled">---</option>
@@ -107,6 +126,14 @@
                                                 value="<?= $motion_type['motion_id'] ?>"><?= $motion_type['motion_name'] ?></option>
                                         <? endforeach ?>
                                     </select>
+                                    </br>
+                                    <label class="control-label">Mootori võimsus(kW):</label>
+                                    <input>
+                                    <? foreach ($kw_index as $kw_type): ?>
+                                        <div class="input-group">
+                                            <input value="<?= $kw_type['kw_id'] ?>"><?= $kw_type['kw_name'] ?>
+                                        </div>
+                                    <? endforeach ?>
                                     </br>
                                     <label class="control-label">Toodud riigist:</label>
                                     <select>
