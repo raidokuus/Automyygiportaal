@@ -1,4 +1,8 @@
 <div class="container">
+    <div class="modal-header">
+        <a id="close" href="<?= BASE_URL ?>" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
+        <h3>Lisa kuulutus</h3>
+    </div>
     <div class="row">
         <div class="span12">
             <div class="modal-body">
@@ -6,6 +10,7 @@
                     <form method="post">
                         <div class="container">
                             <div class="row">
+
                                 <div class="span8">
                                     <div class="control-group">
                                         <label class="control-label">Keretüüp:</label>
