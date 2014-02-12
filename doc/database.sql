@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 12, 2014 kell 10:10 AM
+-- Loomise aeg: Veebr 12, 2014 kell 08:41 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -237,6 +237,35 @@ INSERT INTO `country` (`country_id`, `country_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tabeli struktuur tabelile `door`
+--
+
+DROP TABLE IF EXISTS `door`;
+CREATE TABLE IF NOT EXISTS `door` (
+  `door_id` int(10) NOT NULL AUTO_INCREMENT,
+  `door_name` int(10) NOT NULL,
+  PRIMARY KEY (`door_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Andmete tõmmistamine tabelile `door`
+--
+
+INSERT INTO `door` (`door_id`, `door_name`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10);
+
+-- --------------------------------------------------------
+
+--
 -- Tabeli struktuur tabelile `fuel_type`
 --
 
@@ -315,6 +344,8 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `muu` int(10) NOT NULL,
   `country` int(15) NOT NULL,
   `city` int(15) NOT NULL,
+  `kw` int(7) NOT NULL,
+  `door` int(10) NOT NULL,
   PRIMARY KEY (`body_type`),
   UNIQUE KEY `year` (`year`),
   UNIQUE KEY `year_2` (`year`),
@@ -325,6 +356,19 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   KEY `fuel_type` (`fuel_type`),
   KEY `body_type_3` (`body_type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `kw`
+--
+
+DROP TABLE IF EXISTS `kw`;
+CREATE TABLE IF NOT EXISTS `kw` (
+  `kw_id` int(11) NOT NULL AUTO_INCREMENT,
+  `kw_name` int(11) NOT NULL,
+  PRIMARY KEY (`kw_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -427,6 +471,19 @@ CREATE TABLE IF NOT EXISTS `muu` (
   `muu_id` int(11) NOT NULL AUTO_INCREMENT,
   `muu_name` varchar(200) NOT NULL,
   PRIMARY KEY (`muu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `price`
+--
+
+DROP TABLE IF EXISTS `price`;
+CREATE TABLE IF NOT EXISTS `price` (
+  `price_id` int(10) NOT NULL AUTO_INCREMENT,
+  `price_name` int(50) NOT NULL,
+  PRIMARY KEY (`price_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
