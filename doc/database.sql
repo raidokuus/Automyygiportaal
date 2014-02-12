@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 11, 2014 kell 10:56 PM
+-- Loomise aeg: Veebr 12, 2014 kell 09:56 AM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -72,6 +72,87 @@ INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car
 -- --------------------------------------------------------
 
 --
+-- Tabeli struktuur tabelile `city`
+--
+
+DROP TABLE IF EXISTS `city`;
+CREATE TABLE IF NOT EXISTS `city` (
+  `city_id` int(15) NOT NULL AUTO_INCREMENT,
+  `city_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`city_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
+
+--
+-- Andmete tõmmistamine tabelile `city`
+--
+
+INSERT INTO `city` (`city_id`, `city_name`) VALUES
+(1, 'Abja-Paluoja'),
+(2, 'Antsla'),
+(3, 'Elva'),
+(4, 'Haapsalu'),
+(5, 'Jõgeva'),
+(6, 'Jõhvi'),
+(7, 'Kallaste'),
+(8, 'Kärdla'),
+(9, 'Karksi-Nuia'),
+(10, 'Kehra'),
+(11, 'Keila'),
+(12, 'Kilingi-Nõmme'),
+(13, 'Kiviõli'),
+(14, 'Kohta-Järve'),
+(15, 'Kunda'),
+(16, 'Kuressaare'),
+(17, 'Lihula'),
+(18, 'Loksa'),
+(19, 'Maardu'),
+(20, 'Mõisaküla'),
+(21, 'Mustvee'),
+(22, 'Narva'),
+(23, 'Narva-Jõesuu'),
+(24, 'Otepää'),
+(25, 'Paide'),
+(26, 'Paldiski'),
+(27, 'Pärnu'),
+(28, 'Põltsamaa'),
+(29, 'Põlva'),
+(30, 'Püssi'),
+(31, 'Rakvere'),
+(32, 'Räpina'),
+(33, 'Rapla'),
+(34, 'Saue'),
+(35, 'Sillamäe'),
+(36, 'Sindi'),
+(37, 'Suure-Jaani'),
+(38, 'Tallinn'),
+(39, 'Tamsalu'),
+(40, 'Tapa'),
+(41, 'Tartu'),
+(42, 'Tõrva'),
+(43, 'Türi'),
+(44, 'Valga'),
+(45, 'Viljandi'),
+(46, 'Võhma'),
+(47, 'Võru'),
+(48, 'Harjumaa'),
+(49, 'Hiiumaa'),
+(50, 'Ida-Virumaa'),
+(51, 'Järvamaa'),
+(52, 'Jõgevamaa'),
+(53, 'Lääne-Virumaa'),
+(54, 'Läänemaa'),
+(55, 'Pärnumaa'),
+(56, 'Põlvamaa'),
+(57, 'Raplamaa'),
+(58, 'Saaremaa'),
+(59, 'Tartumaa'),
+(60, 'Valgamaa'),
+(61, 'Viljandimaa'),
+(62, 'Võrumaa');
+
+-- --------------------------------------------------------
+
+--
 -- Tabeli struktuur tabelile `color`
 --
 
@@ -100,6 +181,58 @@ INSERT INTO `color` (`color_id`, `color_name`) VALUES
 (11, 'roosa'),
 (12, 'sinine'),
 (13, 'valge');
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `country`
+--
+
+DROP TABLE IF EXISTS `country`;
+CREATE TABLE IF NOT EXISTS `country` (
+  `country_id` int(15) NOT NULL AUTO_INCREMENT,
+  `country_name` varchar(20) NOT NULL,
+  PRIMARY KEY (`country_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+
+--
+-- Andmete tõmmistamine tabelile `country`
+--
+
+INSERT INTO `country` (`country_id`, `country_name`) VALUES
+(1, 'Ameerika Ühendriigid'),
+(2, 'Austria'),
+(3, 'Belgia'),
+(4, 'Bulgaaria'),
+(5, 'Eesti'),
+(6, 'Hispaania'),
+(7, 'Holland'),
+(8, 'Iirimaa'),
+(9, 'Inglismaa'),
+(10, 'Itaalia'),
+(11, 'Jaapan'),
+(12, 'Kreeka'),
+(13, 'Küpros'),
+(14, 'Leedu'),
+(15, 'Luksenburg'),
+(16, 'Läti'),
+(17, 'Malta'),
+(18, 'Norra'),
+(19, 'Poola'),
+(20, 'Portugal'),
+(21, 'Prantsusmaa'),
+(22, 'Rootsi'),
+(23, 'Rumeenia'),
+(24, 'Saksamaa'),
+(25, 'Slovakkia'),
+(26, 'Sloveenia'),
+(27, 'Soome'),
+(28, 'Suurbritannia'),
+(29, 'Taani'),
+(30, 'Tšehhi'),
+(31, 'Ungari'),
+(32, 'Venemaa'),
+(33, 'Šveits');
 
 -- --------------------------------------------------------
 
@@ -137,7 +270,7 @@ CREATE TABLE IF NOT EXISTS `gearbox` (
   PRIMARY KEY (`gearbox_id`),
   KEY `gearbox_name` (`gearbox_name`),
   KEY `gearbox_name_2` (`gearbox_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Andmete tõmmistamine tabelile `gearbox`
@@ -167,6 +300,8 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `reg` int(10) NOT NULL,
   `motion` int(10) NOT NULL,
   `muu` int(10) NOT NULL,
+  `country` int(15) NOT NULL,
+  `city` int(15) NOT NULL,
   PRIMARY KEY (`body_type`),
   UNIQUE KEY `year` (`year`),
   UNIQUE KEY `year_2` (`year`),
@@ -310,7 +445,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `last_name` varchar(32) NOT NULL,
   `email` varchar(1024) NOT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Andmete tõmmistamine tabelile `user`
@@ -318,7 +453,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, `last_name`, `email`) VALUES
 (1, 'demo', 'demo', 0, '', '', ''),
-(2, 'Lenard', '123456', 0, 'Lenard', 'Lätte', 'lenard@buytec.eu');
+(2, 'Lenard', '123456', 0, 'Lenard', 'Lätte', 'lenard@buytec.eu'),
+(3, 'tanelkolga', 'longdrink', 0, 'tanel', 'kolga', 'kokoko@hot.ee');
 
 -- --------------------------------------------------------
 
@@ -346,7 +482,7 @@ CREATE TABLE IF NOT EXISTS `year` (
   PRIMARY KEY (`year_id`),
   KEY `year_name` (`year_name`),
   KEY `year_name_2` (`year_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=68 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
 
 --
 -- Andmete tõmmistamine tabelile `year`

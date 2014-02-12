@@ -13,6 +13,8 @@ class kuulutus extends Controller{
         $this->reg_index = get_all('SELECT * FROM reg');
         $this->motion_index = get_all('SELECT * FROM motion');
         $this->muu_index = get_all('SELECT * FROM muu');
+        $this->country_index = get_all('SELECT * FROM country');
+        $this->city_index = get_all('SELECT * FROM city');
     }
     function index_post(){
         $this->success = insert('kuulutus', $_POST['data']);

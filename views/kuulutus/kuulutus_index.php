@@ -56,7 +56,9 @@
                 <label class="control-label">VIN-kood</label>
                 <input>
                     <? foreach ($vin_index as $vin_type): ?>
+                        <div class="input-group">
                         <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
+                        </div>
                     <? endforeach ?>
                     </br>
                 <label class="control-label">Reg.number</label>
@@ -76,8 +78,21 @@
                     <textarea class="form-control" rows="4"></textarea>
                     <? foreach ($muu_index as $muu_type): ?>
                         <input value="<?= $muu_type['muu_id'] ?>"><?= $muu_type['muu_name'] ?>
-
                     <? endforeach ?>
+                    </br>
+                <label class="control-label">Toodud riigist:</label>
+                <select>
+                        <? foreach ($country_index as $country_type): ?>
+                            <option value="<?= $country_type['country_id'] ?>"><?= $country_type['country_name'] ?></option>
+                        <? endforeach ?>
+                </select>
+                    </br>
+                <label class="control-label">Sõiduki asukoht:</label>
+                <select>
+                        <? foreach ($city_index as $city_type): ?>
+                            <option value="<?= $city_type['city_id'] ?>"><?= $city_type['city_name'] ?></option>
+                        <? endforeach ?>
+                </select>
                 </div>
             </div>
         </div>
