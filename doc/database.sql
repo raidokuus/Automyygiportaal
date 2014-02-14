@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 12, 2014 kell 08:41 PM
+-- Loomise aeg: Veebr 14, 2014 kell 12:24 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
@@ -346,6 +346,7 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `city` int(15) NOT NULL,
   `kw` int(7) NOT NULL,
   `door` int(10) NOT NULL,
+  `muudlisad` int(15) NOT NULL,
   PRIMARY KEY (`body_type`),
   UNIQUE KEY `year` (`year`),
   UNIQUE KEY `year_2` (`year`),
@@ -471,6 +472,19 @@ CREATE TABLE IF NOT EXISTS `muu` (
   `muu_id` int(11) NOT NULL AUTO_INCREMENT,
   `muu_name` varchar(200) NOT NULL,
   PRIMARY KEY (`muu_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `muudlisad`
+--
+
+DROP TABLE IF EXISTS `muudlisad`;
+CREATE TABLE IF NOT EXISTS `muudlisad` (
+  `muudlisad_id` int(15) NOT NULL AUTO_INCREMENT,
+  `muudlisad_name` varchar(230) NOT NULL,
+  PRIMARY KEY (`muudlisad_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------

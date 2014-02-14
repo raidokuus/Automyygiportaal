@@ -170,8 +170,7 @@
 
     <th>Turva- ja ohutusvarustus</th>
     <th>Audio</th>
-    <th>Muu pask</th>
-    <th>Include in report?<br></th>
+    <th>Mugavusvarustus</th>
     </tr>
 
     <tr>
@@ -194,35 +193,98 @@
             <input type="checkbox" name="query_myTextEditBox"> kõlarid </br>
             <input type="checkbox" name="query_myTextEditBox"> subwoofer </br>
             <input type="checkbox" name="query_myTextEditBox"> ekraan </br>
+            <input type="checkbox" name="query_myTextEditBox"> autotelefon </br>
+            <input type="checkbox" name="query_myTextEditBox"> elektriline antenn </br>
+            <input type="checkbox" name="query_myTextEditBox"> navigatsiooniseade </br>
+            <input type="checkbox" name="query_myTextEditBox"> käed vabad süsteem </br>
+            <input type="checkbox" name="query_myTextEditBox"> GSM antenn </br>
 
 
         </td>
-
         <td class="center">
-            tere
-        </td>
-
-        <td class="center">
-            tere222
+            <input type="checkbox" name="query_myTextEditBox"> elektrilised välispeeglid </br>
+            <input type="checkbox" name="query_myTextEditBox"> elektrilised akende tõstukid </br>
+            <input type="checkbox" name="query_myTextEditBox"> toonitud klaasid </br>
+            <input type="checkbox" name="query_myTextEditBox"> katuseluuk </br>
+            <input type="checkbox" name="query_myTextEditBox"> püsikiiruse hoidja </br>
+            <input type="checkbox" name="query_myTextEditBox"> mootori eelsoojendus </br>
+            <input type="checkbox" name="query_myTextEditBox"> peeglid päikesesirmides </br>
+            <input type="checkbox" name="query_myTextEditBox"> rulookardin tagaaknal </br>
+            <input type="checkbox" name="query_myTextEditBox"> kohtvalgustid </br>
+            <input type="checkbox" name="query_myTextEditBox"> parkimisandurid </br>
         </td>
 
 
     </tr>
     <tr>
         <th>Tuled</th>
+        <th>Sisustus</th>
+        <th>Sportvarustus</th>
     </tr>
     <tr>
         <td class="center">
             <input type="checkbox" name="query_myTextEditBox"> Xenon </br>
+            <input type="checkbox" name="query_myTextEditBox"> LED-tuled </br>
             <input type="checkbox" name="query_myTextEditBox"> esitulede pesurid </br>
             <input type="checkbox" name="query_myTextEditBox"> udutuled </br>
             <input type="checkbox" name="query_myTextEditBox"> tulede korrektor </br>
             <input type="checkbox" name="query_myTextEditBox"> valgustuspakett </br>
         </td>
+        <td class="center">
+            <input type="checkbox" name="query_myTextEditBox"> jalamatid </br>
+            <input type="checkbox" name="query_myTextEditBox"> poolnahkpolster </br>
+            <input type="checkbox" name="query_myTextEditBox"> tekstiilpolster </br>
+            <input type="checkbox" name="query_myTextEditBox"> nahkpolster </br>
+            <input type="checkbox" name="query_myTextEditBox"> istmesoojendused </br>
+            <input type="checkbox" name="query_myTextEditBox"> elektriliselt reguleeritavad istmed </br>
+            <input type="checkbox" name="query_myTextEditBox"> tagaistme seljatugi allaklapitav </br>
+        </td>
+        <td class="center">
+            <input type="checkbox" name="query_myTextEditBox"> tagaspoiler </br>
+            <input type="checkbox" name="query_myTextEditBox"> esispoiler </br>
+            <input type="checkbox" name="query_myTextEditBox"> sportvedrustus </br>
+            <input type="checkbox" name="query_myTextEditBox"> sportsummuti </br>
+            <input type="checkbox" name="query_myTextEditBox"> sportistmed </br>
+        </td>
+    </tr>
+    <tr>
+        <th>Rehvid ja veljed</th>
+        <th>Rool</th>
+        <th>Muud lisad</th>
+    </tr>
+    <tr>
+        <td class="center">
+            <input type="checkbox" name="query_myTextEditBox"> suverehvid </br>
+            <input type="checkbox" name="query_myTextEditBox"> lamellrehvid </br>
+            <input type="checkbox" name="query_myTextEditBox"> talverehvid </br>
+            <input type="checkbox" name="query_myTextEditBox"> valuveljed </br>
+            <input type="checkbox" name="query_myTextEditBox"> ilukilbid </br>
+        </td>
+        <td class="center">
+            <input type="checkbox" name="query_myTextEditBox"> reguleeritav roolisammas </br>
+            <input type="checkbox" name="query_myTextEditBox"> multifunktsionaalne rool </br>
+            <input type="checkbox" name="query_myTextEditBox"> nahkkattega rool </br>
+            <input type="checkbox" name="query_myTextEditBox"> sportrool </br>
+        </td>
+        <td class="center">
+            <input type="checkbox" name="query_myTextEditBox"> suusakott </br>
+            <input type="checkbox" name="query_myTextEditBox"> välistemperatuuri näidik </br>
+            <input type="checkbox" name="query_myTextEditBox"> esiklaasi soojendus </br>
+            <input type="checkbox" name="query_myTextEditBox"> tagaklaasi soojendus </br>
+            <input type="checkbox" name="query_myTextEditBox"> veokonks </br>
+        </td>
 
+    </tr>
 </table>
 
 <!-- TABELI LÕPP -->
+</br>
+<label class="control-label">Muud lisad:</label>
+<textarea class="form-control" rows="4" style="width: 300px;"></textarea>
+<? foreach ($muudlisad_index as $muudlisad_type): ?>
+    <input value="<?= $muudlisad_type['muudlisad_id'] ?>"><?= $muudlisad_type['muudlisad_name'] ?>
+<? endforeach ?>
+</br>
 
 
 </div>
