@@ -3,10 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 16, 2014 kell 11:28 PM
+-- Loomise aeg: Veebr 16, 2014 kell 11:50 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -364,7 +365,21 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   KEY `city_id` (`city_id`),
   KEY `kw_id` (`kw_id`),
   KEY `door_id` (`door_id`),
-  KEY `muudlisad_id` (`muudlisad_id`)
+  KEY `muudlisad_id` (`muudlisad_id`),
+  KEY `fuel_type_id_3` (`fuel_type_id`),
+  KEY `make_id_2` (`make_id`),
+  KEY `gearbox_id_2` (`gearbox_id`),
+  KEY `color_id_2` (`color_id`),
+  KEY `vin_id_2` (`vin_id`),
+  KEY `muudlisad_id_2` (`muudlisad_id`),
+  KEY `door_id_2` (`door_id`),
+  KEY `kw_id_2` (`kw_id`),
+  KEY `city_id_2` (`city_id`),
+  KEY `country_id_2` (`country_id`),
+  KEY `muu_id_2` (`muu_id`),
+  KEY `reg_id_2` (`reg_id`),
+  KEY `motion_id_2` (`motion_id`),
+  KEY `price_id_2` (`price_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -669,6 +684,20 @@ INSERT INTO `year` (`year_id`, `year_name`) VALUES
 -- Piirangud tabelile `kuulutus`
 --
 ALTER TABLE `kuulutus`
+  ADD CONSTRAINT `kuulutus_ibfk_16` FOREIGN KEY (`motion_id`) REFERENCES `kuulutus` (`motion_id`),
   ADD CONSTRAINT `kuulutus_ibfk_1` FOREIGN KEY (`body_type_id`) REFERENCES `kuulutus` (`body_type_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_10` FOREIGN KEY (`city_id`) REFERENCES `kuulutus` (`city_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_11` FOREIGN KEY (`kw_id`) REFERENCES `kuulutus` (`kw_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_12` FOREIGN KEY (`door_id`) REFERENCES `kuulutus` (`door_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_13` FOREIGN KEY (`muudlisad_id`) REFERENCES `kuulutus` (`muudlisad_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_14` FOREIGN KEY (`muu_id`) REFERENCES `kuulutus` (`muu_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_15` FOREIGN KEY (`reg_id`) REFERENCES `kuulutus` (`reg_id`),
   ADD CONSTRAINT `kuulutus_ibfk_2` FOREIGN KEY (`fuel_type_id`) REFERENCES `kuulutus` (`fuel_type_id`),
-  ADD CONSTRAINT `kuulutus_ibfk_3` FOREIGN KEY (`year_id`) REFERENCES `kuulutus` (`year_id`);
+  ADD CONSTRAINT `kuulutus_ibfk_3` FOREIGN KEY (`year_id`) REFERENCES `kuulutus` (`year_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_4` FOREIGN KEY (`make_id`) REFERENCES `kuulutus` (`make_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_5` FOREIGN KEY (`price_id`) REFERENCES `kuulutus` (`price_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_6` FOREIGN KEY (`gearbox_id`) REFERENCES `kuulutus` (`gearbox_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_7` FOREIGN KEY (`color_id`) REFERENCES `kuulutus` (`country_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_8` FOREIGN KEY (`vin_id`) REFERENCES `kuulutus` (`vin_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_9` FOREIGN KEY (`country_id`) REFERENCES `kuulutus` (`country_id`);
+SET FOREIGN_KEY_CHECKS=1;
