@@ -21,7 +21,7 @@ class kuulutus extends Controller{
         $this->price_index = get_all('SELECT * FROM price');
         $this->muudlisad_index = get_all('SELECT * FROM muudlisad');
     }
-    function index_post(){
-        $this->success = insert('kuulutus', $_POST['data']);
+    function index_ajax() {
+        exit('klaabu');
     }
 }

@@ -1,3 +1,4 @@
+<form id="form">
 <div class="container">
 <div class="modal-header">
     <a id="close" href="<?= BASE_URL ?>" class="close" data-dismiss="modal" aria-hidden="true">×</button></a>
@@ -8,7 +9,6 @@
 <div class="span12">
 <div class="modal-body">
 <div class="well">
-<form method="post">
 <div class="container">
 <div class="row">
 
@@ -160,21 +160,17 @@
 <? endforeach ?>
 </br>
 <!-- TABEL -->
-<table style="empty-cells:" hide
-">
-<th>VARUSTUS</th>
-</table>
 
-</br>
-<table style="empty-cells:hide;" border="1" cellpadding="1" cellspacing="1">
+<h4><b>VARUSTUS</b></h4>
+<table style=empty-cells:hide; border="1" cellpadding="1" cellspacing="1">
 
     <th>Turva- ja ohutusvarustus</th>
     <th>Audio</th>
     <th>Mugavusvarustus</th>
-    </tr>
 
     <tr>
         <td class="center">
+
             <input type="checkbox" name="query_myTextEditBox"> roolivõimendi </br>
             <input type="checkbox" name="query_myTextEditBox"> kesklukustus </br>
             <input type="checkbox" name="query_myTextEditBox"> ABS pidurid </br>
@@ -285,13 +281,9 @@
     <input value="<?= $muudlisad_type['muudlisad_id'] ?>"><?= $muudlisad_type['muudlisad_name'] ?>
 <? endforeach ?>
 </br>
-
-
 </div>
 </div>
 </div>
-</div>
-</form>
 </div>
 </div>
 </div>
@@ -307,8 +299,6 @@
         var textinput = document.getElementById("filename");
         textinput.value = fileinput.value;
     }
-
-
 </script>
 <label for="valim" class="control-label">
     Vali sõiduki pildid
@@ -318,12 +308,19 @@
 <input type="text" id="filename" readonly="true"/>
 <input type="button" value="Vali pildid" id="fakeBrowse" onclick="HandleBrowseClick();"/>
 
-<div class="form-actions">
-    <a href="<?= BASE_URL ?>" button type="submit" class="btn btn-large btn-primary">Salvesta</button></a>
-</div>
-</div>
-</div>
-<!-- .span8 -->
-</div>
-</div>
+</br>
+<button onclick="submitForm()">Salvesta</button>
+
+    <script>
+        function submitForm() {
+            alert('a');
+            $.post("welcome", $("#form").serialize(), function (data) {
+                if (data == 'OK')
+                    alert('Salvestatud');
+                else
+                    alert('Tekkis viga: server vastas: ' + data);
+            });
+            alert('b');
+        }
+    </script>
 </form>
