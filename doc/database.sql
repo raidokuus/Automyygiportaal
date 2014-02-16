@@ -3,11 +3,10 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Veebr 14, 2014 kell 12:24 PM
+-- Loomise aeg: Veebr 16, 2014 kell 11:28 PM
 -- Serveri versioon: 5.5.34
 -- PHP versioon: 5.4.22
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
@@ -23,7 +22,7 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `body_type`;
 CREATE TABLE IF NOT EXISTS `body_type` (
-  `body_type_id` int(10) NOT NULL AUTO_INCREMENT,
+  `body_type_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `body_type_name` varchar(32) NOT NULL,
   PRIMARY KEY (`body_type_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
@@ -77,7 +76,7 @@ INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car
 
 DROP TABLE IF EXISTS `city`;
 CREATE TABLE IF NOT EXISTS `city` (
-  `city_id` int(15) NOT NULL AUTO_INCREMENT,
+  `city_id` int(15) unsigned NOT NULL AUTO_INCREMENT,
   `city_name` varchar(20) NOT NULL,
   PRIMARY KEY (`city_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
@@ -158,7 +157,7 @@ INSERT INTO `city` (`city_id`, `city_name`) VALUES
 
 DROP TABLE IF EXISTS `color`;
 CREATE TABLE IF NOT EXISTS `color` (
-  `color_id` int(10) NOT NULL AUTO_INCREMENT,
+  `color_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `color_name` varchar(30) NOT NULL,
   PRIMARY KEY (`color_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
@@ -190,7 +189,7 @@ INSERT INTO `color` (`color_id`, `color_name`) VALUES
 
 DROP TABLE IF EXISTS `country`;
 CREATE TABLE IF NOT EXISTS `country` (
-  `country_id` int(15) NOT NULL AUTO_INCREMENT,
+  `country_id` int(15) unsigned NOT NULL AUTO_INCREMENT,
   `country_name` varchar(20) NOT NULL,
   PRIMARY KEY (`country_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
@@ -242,7 +241,7 @@ INSERT INTO `country` (`country_id`, `country_name`) VALUES
 
 DROP TABLE IF EXISTS `door`;
 CREATE TABLE IF NOT EXISTS `door` (
-  `door_id` int(10) NOT NULL AUTO_INCREMENT,
+  `door_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `door_name` int(10) NOT NULL,
   PRIMARY KEY (`door_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
@@ -271,7 +270,7 @@ INSERT INTO `door` (`door_id`, `door_name`) VALUES
 
 DROP TABLE IF EXISTS `fuel_type`;
 CREATE TABLE IF NOT EXISTS `fuel_type` (
-  `fuel_type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `fuel_type_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `fuel_type_name` varchar(32) NOT NULL,
   PRIMARY KEY (`fuel_type_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
@@ -294,7 +293,7 @@ INSERT INTO `fuel_type` (`fuel_type_id`, `fuel_type_name`) VALUES
 
 DROP TABLE IF EXISTS `gearbox`;
 CREATE TABLE IF NOT EXISTS `gearbox` (
-  `gearbox_id` int(11) NOT NULL AUTO_INCREMENT,
+  `gearbox_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `gearbox_name` varchar(15) NOT NULL,
   PRIMARY KEY (`gearbox_id`),
   KEY `gearbox_name` (`gearbox_name`),
@@ -318,7 +317,7 @@ INSERT INTO `gearbox` (`gearbox_id`, `gearbox_name`) VALUES
 
 DROP TABLE IF EXISTS `km`;
 CREATE TABLE IF NOT EXISTS `km` (
-  `km_id` int(15) NOT NULL AUTO_INCREMENT,
+  `km_id` int(15) unsigned NOT NULL AUTO_INCREMENT,
   `km_name` int(15) NOT NULL,
   PRIMARY KEY (`km_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -331,31 +330,41 @@ CREATE TABLE IF NOT EXISTS `km` (
 
 DROP TABLE IF EXISTS `kuulutus`;
 CREATE TABLE IF NOT EXISTS `kuulutus` (
-  `body_type` varchar(32) NOT NULL,
-  `make` int(11) unsigned NOT NULL,
-  `price` int(10) NOT NULL,
-  `fuel_type` varchar(32) NOT NULL,
-  `year` int(5) NOT NULL,
-  `gearbox` int(10) NOT NULL,
-  `color` varchar(30) NOT NULL,
-  `vin` int(10) NOT NULL,
-  `reg` int(10) NOT NULL,
-  `motion` int(10) NOT NULL,
-  `muu` int(10) NOT NULL,
-  `country` int(15) NOT NULL,
-  `city` int(15) NOT NULL,
-  `kw` int(7) NOT NULL,
-  `door` int(10) NOT NULL,
-  `muudlisad` int(15) NOT NULL,
-  PRIMARY KEY (`body_type`),
-  UNIQUE KEY `year` (`year`),
-  UNIQUE KEY `year_2` (`year`),
-  UNIQUE KEY `year_3` (`year`),
-  UNIQUE KEY `body_type` (`body_type`),
-  UNIQUE KEY `year_4` (`year`),
-  UNIQUE KEY `body_type_2` (`body_type`),
-  KEY `fuel_type` (`fuel_type`),
-  KEY `body_type_3` (`body_type`)
+  `body_type_id` int(32) unsigned NOT NULL DEFAULT '0',
+  `make_id` int(11) unsigned DEFAULT NULL,
+  `price_id` int(10) unsigned DEFAULT NULL,
+  `fuel_type_id` int(10) unsigned DEFAULT NULL,
+  `year_id` smallint(5) unsigned DEFAULT NULL,
+  `gearbox_id` int(10) unsigned DEFAULT NULL,
+  `color_id` int(30) unsigned DEFAULT NULL,
+  `vin_id` int(10) unsigned DEFAULT NULL,
+  `reg_id` int(10) unsigned DEFAULT NULL,
+  `motion_id` int(10) unsigned DEFAULT NULL,
+  `muu_id` int(10) unsigned DEFAULT NULL,
+  `country_id` int(15) unsigned DEFAULT NULL,
+  `city_id` int(15) unsigned DEFAULT NULL,
+  `kw_id` int(7) unsigned DEFAULT NULL,
+  `door_id` int(10) unsigned DEFAULT NULL,
+  `muudlisad_id` int(15) unsigned DEFAULT NULL,
+  PRIMARY KEY (`body_type_id`),
+  UNIQUE KEY `body_type` (`body_type_id`),
+  UNIQUE KEY `year` (`year_id`),
+  KEY `fuel_type_id` (`fuel_type_id`),
+  KEY `fuel_type_id_2` (`fuel_type_id`),
+  KEY `make_id` (`make_id`),
+  KEY `price_id` (`price_id`),
+  KEY `year_id` (`year_id`),
+  KEY `gearbox_id` (`gearbox_id`),
+  KEY `color_id` (`color_id`),
+  KEY `vin_id` (`vin_id`),
+  KEY `reg_id` (`reg_id`),
+  KEY `motion_id` (`motion_id`),
+  KEY `muu_id` (`muu_id`),
+  KEY `country_id` (`country_id`),
+  KEY `city_id` (`city_id`),
+  KEY `kw_id` (`kw_id`),
+  KEY `door_id` (`door_id`),
+  KEY `muudlisad_id` (`muudlisad_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -366,7 +375,7 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
 
 DROP TABLE IF EXISTS `kw`;
 CREATE TABLE IF NOT EXISTS `kw` (
-  `kw_id` int(11) NOT NULL AUTO_INCREMENT,
+  `kw_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `kw_name` int(11) NOT NULL,
   PRIMARY KEY (`kw_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -379,7 +388,7 @@ CREATE TABLE IF NOT EXISTS `kw` (
 
 DROP TABLE IF EXISTS `make`;
 CREATE TABLE IF NOT EXISTS `make` (
-  `make_id` int(10) NOT NULL AUTO_INCREMENT,
+  `make_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `make_name` varchar(32) NOT NULL,
   PRIMARY KEY (`make_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
@@ -447,7 +456,7 @@ INSERT INTO `make` (`make_id`, `make_name`) VALUES
 
 DROP TABLE IF EXISTS `motion`;
 CREATE TABLE IF NOT EXISTS `motion` (
-  `motion_id` int(10) NOT NULL AUTO_INCREMENT,
+  `motion_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `motion_name` varchar(20) NOT NULL,
   PRIMARY KEY (`motion_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
@@ -469,7 +478,7 @@ INSERT INTO `motion` (`motion_id`, `motion_name`) VALUES
 
 DROP TABLE IF EXISTS `muu`;
 CREATE TABLE IF NOT EXISTS `muu` (
-  `muu_id` int(11) NOT NULL AUTO_INCREMENT,
+  `muu_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `muu_name` varchar(200) NOT NULL,
   PRIMARY KEY (`muu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -482,7 +491,7 @@ CREATE TABLE IF NOT EXISTS `muu` (
 
 DROP TABLE IF EXISTS `muudlisad`;
 CREATE TABLE IF NOT EXISTS `muudlisad` (
-  `muudlisad_id` int(15) NOT NULL AUTO_INCREMENT,
+  `muudlisad_id` int(15) unsigned NOT NULL AUTO_INCREMENT,
   `muudlisad_name` varchar(230) NOT NULL,
   PRIMARY KEY (`muudlisad_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -495,7 +504,7 @@ CREATE TABLE IF NOT EXISTS `muudlisad` (
 
 DROP TABLE IF EXISTS `price`;
 CREATE TABLE IF NOT EXISTS `price` (
-  `price_id` int(10) NOT NULL AUTO_INCREMENT,
+  `price_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `price_name` int(50) NOT NULL,
   PRIMARY KEY (`price_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -508,9 +517,22 @@ CREATE TABLE IF NOT EXISTS `price` (
 
 DROP TABLE IF EXISTS `reg`;
 CREATE TABLE IF NOT EXISTS `reg` (
-  `reg_id` int(10) NOT NULL AUTO_INCREMENT,
+  `reg_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `reg_name` int(10) NOT NULL,
   PRIMARY KEY (`reg_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Tabeli struktuur tabelile `roolivoim`
+--
+
+DROP TABLE IF EXISTS `roolivoim`;
+CREATE TABLE IF NOT EXISTS `roolivoim` (
+  `roolivoim_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `roolivoim_name` varchar(15) NOT NULL,
+  PRIMARY KEY (`roolivoim_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -548,7 +570,7 @@ INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, 
 
 DROP TABLE IF EXISTS `vin`;
 CREATE TABLE IF NOT EXISTS `vin` (
-  `vin_id` int(10) NOT NULL AUTO_INCREMENT,
+  `vin_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `vin_name` int(32) NOT NULL,
   PRIMARY KEY (`vin_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -561,7 +583,7 @@ CREATE TABLE IF NOT EXISTS `vin` (
 
 DROP TABLE IF EXISTS `year`;
 CREATE TABLE IF NOT EXISTS `year` (
-  `year_id` int(7) NOT NULL AUTO_INCREMENT,
+  `year_id` smallint(7) unsigned NOT NULL AUTO_INCREMENT,
   `year_name` int(5) NOT NULL,
   PRIMARY KEY (`year_id`),
   KEY `year_name` (`year_name`),
@@ -638,4 +660,15 @@ INSERT INTO `year` (`year_id`, `year_name`) VALUES
 (64, 2012),
 (65, 2013),
 (66, 2014);
-SET FOREIGN_KEY_CHECKS=1;
+
+--
+-- Tõmmistatud tabelite piirangud
+--
+
+--
+-- Piirangud tabelile `kuulutus`
+--
+ALTER TABLE `kuulutus`
+  ADD CONSTRAINT `kuulutus_ibfk_1` FOREIGN KEY (`body_type_id`) REFERENCES `kuulutus` (`body_type_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_2` FOREIGN KEY (`fuel_type_id`) REFERENCES `kuulutus` (`fuel_type_id`),
+  ADD CONSTRAINT `kuulutus_ibfk_3` FOREIGN KEY (`year_id`) REFERENCES `kuulutus` (`year_id`);
