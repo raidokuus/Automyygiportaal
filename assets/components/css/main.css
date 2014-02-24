@@ -1,3 +1,7 @@
+.inline-block {
+  display: inline-block;
+}
+
 .container-welcome {
   padding-top: 10px;
 }
@@ -10,5 +14,23 @@
   height: auto;
 }
 #rightside {
-    width: 30%; float: right;
+  display: inline-block;
+  vertical-align: top;
+  width: 330px;
+  margin-left: 95px;
+}
+#rightside .row {
+  margin-left: 0;
+}
+
+.first-title {
+  width: 740px;
+}
+
+.second-title {
+  width: 455px;
+  text-align: center;
+}
+
+.control-label {
 }
