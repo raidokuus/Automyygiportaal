@@ -1,24 +1,24 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.1-dev
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Loomise aeg: Veebr 18, 2014 kell 01:33 PM
--- Serveri versioon: 5.5.34
--- PHP versioon: 5.4.22
+-- Host: localhost
+-- Generation Time: Feb 27, 2014 at 11:48 AM
+-- Server version: 5.5.25
+-- PHP Version: 5.4.4
 
 SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Andmebaas: `autoportaal`
+-- Database: `autoportaal`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `body_type`
+-- Table structure for table `body_type`
 --
 
 DROP TABLE IF EXISTS `body_type`;
@@ -29,22 +29,22 @@ CREATE TABLE IF NOT EXISTS `body_type` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
--- Andmete tõmmistamine tabelile `body_type`
+-- Dumping data for table `body_type`
 --
 
 INSERT INTO `body_type` (`body_type_id`, `body_type_name`) VALUES
-(1, 'Sedaan'),
-(2, 'Luukpära'),
-(3, 'Universaal'),
-(4, 'Mahtuniversaal'),
-(5, 'Kupee'),
-(6, 'Kabriolett'),
-(7, 'Pikap');
+(1, ''Sedaan''),
+(2, ''Luukpära''),
+(3, ''Universaal''),
+(4, ''Mahtuniversaal''),
+(5, ''Kupee''),
+(6, ''Kabriolett''),
+(7, ''Pikap'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `car`
+-- Table structure for table `car`
 --
 
 DROP TABLE IF EXISTS `car`;
@@ -61,18 +61,18 @@ CREATE TABLE IF NOT EXISTS `car` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_estonian_ci AUTO_INCREMENT=4 ;
 
 --
--- Andmete tõmmistamine tabelile `car`
+-- Dumping data for table `car`
 --
 
 INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car_created`, `user_id`) VALUES
-(1, 'Auto1', 'Auto1 tekst', 1234, 'http://www.extremetech.com/wp-content/uploads/2012/12/Audi-A1.jpg', '2014-02-07 11:00:09', 1),
-(2, 'Auto 2', 'Auto 2 tekst', 12345, 'http://images.dailytech.com/nimage/m_l_13.jpg', '2014-02-07 11:00:30', 1),
-(3, 'Auto 4', 'Auto 4', 2342, 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQHkD1nKz-MH1SWbA1neZfNIRNUgJ2pcFkrAZ6XpqbJBWqmOG6a', '2014-02-07 11:19:36', 1);
+(1, ''Auto1'', ''Auto1 tekst'', 1234, ''http://www.extremetech.com/wp-content/uploads/2012/12/Audi-A1.jpg'', ''2014-02-07 11:00:09'', 1),
+(2, ''Auto 2'', ''Auto 2 tekst'', 12345, ''http://images.dailytech.com/nimage/m_l_13.jpg'', ''2014-02-07 11:00:30'', 1),
+(3, ''Auto 4'', ''Auto 4'', 2342, ''https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQHkD1nKz-MH1SWbA1neZfNIRNUgJ2pcFkrAZ6XpqbJBWqmOG6a'', ''2014-02-07 11:19:36'', 1);
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `city`
+-- Table structure for table `city`
 --
 
 DROP TABLE IF EXISTS `city`;
@@ -83,77 +83,77 @@ CREATE TABLE IF NOT EXISTS `city` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=63 ;
 
 --
--- Andmete tõmmistamine tabelile `city`
+-- Dumping data for table `city`
 --
 
 INSERT INTO `city` (`city_id`, `city_name`) VALUES
-(1, 'Abja-Paluoja'),
-(2, 'Antsla'),
-(3, 'Elva'),
-(4, 'Haapsalu'),
-(5, 'Jõgeva'),
-(6, 'Jõhvi'),
-(7, 'Kallaste'),
-(8, 'Kärdla'),
-(9, 'Karksi-Nuia'),
-(10, 'Kehra'),
-(11, 'Keila'),
-(12, 'Kilingi-Nõmme'),
-(13, 'Kiviõli'),
-(14, 'Kohta-Järve'),
-(15, 'Kunda'),
-(16, 'Kuressaare'),
-(17, 'Lihula'),
-(18, 'Loksa'),
-(19, 'Maardu'),
-(20, 'Mõisaküla'),
-(21, 'Mustvee'),
-(22, 'Narva'),
-(23, 'Narva-Jõesuu'),
-(24, 'Otepää'),
-(25, 'Paide'),
-(26, 'Paldiski'),
-(27, 'Pärnu'),
-(28, 'Põltsamaa'),
-(29, 'Põlva'),
-(30, 'Püssi'),
-(31, 'Rakvere'),
-(32, 'Räpina'),
-(33, 'Rapla'),
-(34, 'Saue'),
-(35, 'Sillamäe'),
-(36, 'Sindi'),
-(37, 'Suure-Jaani'),
-(38, 'Tallinn'),
-(39, 'Tamsalu'),
-(40, 'Tapa'),
-(41, 'Tartu'),
-(42, 'Tõrva'),
-(43, 'Türi'),
-(44, 'Valga'),
-(45, 'Viljandi'),
-(46, 'Võhma'),
-(47, 'Võru'),
-(48, 'Harjumaa'),
-(49, 'Hiiumaa'),
-(50, 'Ida-Virumaa'),
-(51, 'Järvamaa'),
-(52, 'Jõgevamaa'),
-(53, 'Lääne-Virumaa'),
-(54, 'Läänemaa'),
-(55, 'Pärnumaa'),
-(56, 'Põlvamaa'),
-(57, 'Raplamaa'),
-(58, 'Saaremaa'),
-(59, 'Tartumaa'),
-(60, 'Valgamaa'),
-(61, 'Viljandimaa'),
-(62, 'Võrumaa');
+(1, ''Abja-Paluoja''),
+(2, ''Antsla''),
+(3, ''Elva''),
+(4, ''Haapsalu''),
+(5, ''Jõgeva''),
+(6, ''Jõhvi''),
+(7, ''Kallaste''),
+(8, ''Kärdla''),
+(9, ''Karksi-Nuia''),
+(10, ''Kehra''),
+(11, ''Keila''),
+(12, ''Kilingi-Nõmme''),
+(13, ''Kiviõli''),
+(14, ''Kohta-Järve''),
+(15, ''Kunda''),
+(16, ''Kuressaare''),
+(17, ''Lihula''),
+(18, ''Loksa''),
+(19, ''Maardu''),
+(20, ''Mõisaküla''),
+(21, ''Mustvee''),
+(22, ''Narva''),
+(23, ''Narva-Jõesuu''),
+(24, ''Otepää''),
+(25, ''Paide''),
+(26, ''Paldiski''),
+(27, ''Pärnu''),
+(28, ''Põltsamaa''),
+(29, ''Põlva''),
+(30, ''Püssi''),
+(31, ''Rakvere''),
+(32, ''Räpina''),
+(33, ''Rapla''),
+(34, ''Saue''),
+(35, ''Sillamäe''),
+(36, ''Sindi''),
+(37, ''Suure-Jaani''),
+(38, ''Tallinn''),
+(39, ''Tamsalu''),
+(40, ''Tapa''),
+(41, ''Tartu''),
+(42, ''Tõrva''),
+(43, ''Türi''),
+(44, ''Valga''),
+(45, ''Viljandi''),
+(46, ''Võhma''),
+(47, ''Võru''),
+(48, ''Harjumaa''),
+(49, ''Hiiumaa''),
+(50, ''Ida-Virumaa''),
+(51, ''Järvamaa''),
+(52, ''Jõgevamaa''),
+(53, ''Lääne-Virumaa''),
+(54, ''Läänemaa''),
+(55, ''Pärnumaa''),
+(56, ''Põlvamaa''),
+(57, ''Raplamaa''),
+(58, ''Saaremaa''),
+(59, ''Tartumaa''),
+(60, ''Valgamaa''),
+(61, ''Viljandimaa''),
+(62, ''Võrumaa'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `color`
+-- Table structure for table `color`
 --
 
 DROP TABLE IF EXISTS `color`;
@@ -164,28 +164,28 @@ CREATE TABLE IF NOT EXISTS `color` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
--- Andmete tõmmistamine tabelile `color`
+-- Dumping data for table `color`
 --
 
 INSERT INTO `color` (`color_id`, `color_name`) VALUES
-(1, 'beež'),
-(2, 'hall'),
-(3, 'kollane'),
-(4, 'kuldne'),
-(5, 'lilla'),
-(6, 'must'),
-(7, 'oranž'),
-(8, 'pruun'),
-(9, 'punane'),
-(10, 'roheline'),
-(11, 'roosa'),
-(12, 'sinine'),
-(13, 'valge');
+(1, ''beež''),
+(2, ''hall''),
+(3, ''kollane''),
+(4, ''kuldne''),
+(5, ''lilla''),
+(6, ''must''),
+(7, ''oranž''),
+(8, ''pruun''),
+(9, ''punane''),
+(10, ''roheline''),
+(11, ''roosa''),
+(12, ''sinine''),
+(13, ''valge'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `country`
+-- Table structure for table `country`
 --
 
 DROP TABLE IF EXISTS `country`;
@@ -196,48 +196,48 @@ CREATE TABLE IF NOT EXISTS `country` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
--- Andmete tõmmistamine tabelile `country`
+-- Dumping data for table `country`
 --
 
 INSERT INTO `country` (`country_id`, `country_name`) VALUES
-(1, 'Ameerika Ühendriigid'),
-(2, 'Austria'),
-(3, 'Belgia'),
-(4, 'Bulgaaria'),
-(5, 'Eesti'),
-(6, 'Hispaania'),
-(7, 'Holland'),
-(8, 'Iirimaa'),
-(9, 'Inglismaa'),
-(10, 'Itaalia'),
-(11, 'Jaapan'),
-(12, 'Kreeka'),
-(13, 'Küpros'),
-(14, 'Leedu'),
-(15, 'Luksenburg'),
-(16, 'Läti'),
-(17, 'Malta'),
-(18, 'Norra'),
-(19, 'Poola'),
-(20, 'Portugal'),
-(21, 'Prantsusmaa'),
-(22, 'Rootsi'),
-(23, 'Rumeenia'),
-(24, 'Saksamaa'),
-(25, 'Slovakkia'),
-(26, 'Sloveenia'),
-(27, 'Soome'),
-(28, 'Suurbritannia'),
-(29, 'Taani'),
-(30, 'Tšehhi'),
-(31, 'Ungari'),
-(32, 'Venemaa'),
-(33, 'Šveits');
+(1, ''Ameerika Ühendriigid''),
+(2, ''Austria''),
+(3, ''Belgia''),
+(4, ''Bulgaaria''),
+(5, ''Eesti''),
+(6, ''Hispaania''),
+(7, ''Holland''),
+(8, ''Iirimaa''),
+(9, ''Inglismaa''),
+(10, ''Itaalia''),
+(11, ''Jaapan''),
+(12, ''Kreeka''),
+(13, ''Küpros''),
+(14, ''Leedu''),
+(15, ''Luksenburg''),
+(16, ''Läti''),
+(17, ''Malta''),
+(18, ''Norra''),
+(19, ''Poola''),
+(20, ''Portugal''),
+(21, ''Prantsusmaa''),
+(22, ''Rootsi''),
+(23, ''Rumeenia''),
+(24, ''Saksamaa''),
+(25, ''Slovakkia''),
+(26, ''Sloveenia''),
+(27, ''Soome''),
+(28, ''Suurbritannia''),
+(29, ''Taani''),
+(30, ''Tšehhi''),
+(31, ''Ungari''),
+(32, ''Venemaa''),
+(33, ''Šveits'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `door`
+-- Table structure for table `door`
 --
 
 DROP TABLE IF EXISTS `door`;
@@ -248,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `door` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
--- Andmete tõmmistamine tabelile `door`
+-- Dumping data for table `door`
 --
 
 INSERT INTO `door` (`door_id`, `door_name`) VALUES
@@ -266,7 +266,7 @@ INSERT INTO `door` (`door_id`, `door_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `fuel_type`
+-- Table structure for table `fuel_type`
 --
 
 DROP TABLE IF EXISTS `fuel_type`;
@@ -277,19 +277,19 @@ CREATE TABLE IF NOT EXISTS `fuel_type` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Andmete tõmmistamine tabelile `fuel_type`
+-- Dumping data for table `fuel_type`
 --
 
 INSERT INTO `fuel_type` (`fuel_type_id`, `fuel_type_name`) VALUES
-(1, 'Bensiin'),
-(2, 'Diisel'),
-(3, 'Hübriid'),
-(4, 'Elekter');
+(1, ''Bensiin''),
+(2, ''Diisel''),
+(3, ''Hübriid''),
+(4, ''Elekter'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `gearbox`
+-- Table structure for table `gearbox`
 --
 
 DROP TABLE IF EXISTS `gearbox`;
@@ -302,18 +302,18 @@ CREATE TABLE IF NOT EXISTS `gearbox` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
--- Andmete tõmmistamine tabelile `gearbox`
+-- Dumping data for table `gearbox`
 --
 
 INSERT INTO `gearbox` (`gearbox_id`, `gearbox_name`) VALUES
-(3, 'automaat'),
-(2, 'manuaal'),
-(4, 'poolautomaat');
+(3, ''automaat''),
+(2, ''manuaal''),
+(4, ''poolautomaat'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `km`
+-- Table structure for table `km`
 --
 
 DROP TABLE IF EXISTS `km`;
@@ -326,12 +326,12 @@ CREATE TABLE IF NOT EXISTS `km` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `kuulutus`
+-- Table structure for table `kuulutus`
 --
 
 DROP TABLE IF EXISTS `kuulutus`;
 CREATE TABLE IF NOT EXISTS `kuulutus` (
-  `body_type_id` int(32) unsigned NOT NULL DEFAULT '0',
+  `body_type_id` int(32) unsigned NOT NULL DEFAULT ''0'',
   `make_id` int(11) unsigned DEFAULT NULL,
   `price_id` int(10) unsigned DEFAULT NULL,
   `fuel_type_id` int(10) unsigned DEFAULT NULL,
@@ -385,7 +385,7 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `kw`
+-- Table structure for table `kw`
 --
 
 DROP TABLE IF EXISTS `kw`;
@@ -398,7 +398,7 @@ CREATE TABLE IF NOT EXISTS `kw` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `make`
+-- Table structure for table `make`
 --
 
 DROP TABLE IF EXISTS `make`;
@@ -409,64 +409,86 @@ CREATE TABLE IF NOT EXISTS `make` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
--- Andmete tõmmistamine tabelile `make`
+-- Dumping data for table `make`
 --
 
 INSERT INTO `make` (`make_id`, `make_name`) VALUES
-(1, 'Alfa Romeo'),
-(2, 'Audi'),
-(3, 'Bentley'),
-(4, 'BMW'),
-(5, 'Cadillac'),
-(6, 'Chevrolet'),
-(7, 'Chrysler'),
-(8, 'Citroen'),
-(9, 'Dacia'),
-(10, 'Daewoo'),
-(11, 'Dodge'),
-(12, 'Ferrari'),
-(13, 'Fiat'),
-(14, 'Ford'),
-(15, 'Honda'),
-(16, 'Hummer'),
-(17, 'Hyundai'),
-(18, 'Jaguar'),
-(19, 'Jeep'),
-(20, 'Kia'),
-(21, 'Lada'),
-(22, 'Lamborghini'),
-(23, 'Lancia'),
-(24, 'Land Rover'),
-(25, 'Lexus'),
-(26, 'Lotus'),
-(27, 'Maserati'),
-(28, 'Mazda'),
-(29, 'Mercedes-Benz'),
-(30, 'Mitshubishi'),
-(31, 'Moskvich'),
-(32, 'Nissan'),
-(33, 'Opel'),
-(34, 'Peugeot'),
-(35, 'Pontiac'),
-(36, 'Porche'),
-(37, 'Renault'),
-(38, 'Rolls-Royce'),
-(39, 'Rover'),
-(40, 'Saab'),
-(41, 'SEAT'),
-(42, 'Skoda'),
-(43, 'Subaru'),
-(44, 'Suzuki'),
-(45, 'Toyota'),
-(46, 'UAZ'),
-(47, 'Volkswagen'),
-(48, 'Volvo'),
-(49, 'GAZ');
+(1, ''Alfa Romeo''),
+(2, ''Audi''),
+(3, ''Bentley''),
+(4, ''BMW''),
+(5, ''Cadillac''),
+(6, ''Chevrolet''),
+(7, ''Chrysler''),
+(8, ''Citroen''),
+(9, ''Dacia''),
+(10, ''Daewoo''),
+(11, ''Dodge''),
+(12, ''Ferrari''),
+(13, ''Fiat''),
+(14, ''Ford''),
+(15, ''Honda''),
+(16, ''Hummer''),
+(17, ''Hyundai''),
+(18, ''Jaguar''),
+(19, ''Jeep''),
+(20, ''Kia''),
+(21, ''Lada''),
+(22, ''Lamborghini''),
+(23, ''Lancia''),
+(24, ''Land Rover''),
+(25, ''Lexus''),
+(26, ''Lotus''),
+(27, ''Maserati''),
+(28, ''Mazda''),
+(29, ''Mercedes-Benz''),
+(30, ''Mitshubishi''),
+(31, ''Moskvich''),
+(32, ''Nissan''),
+(33, ''Opel''),
+(34, ''Peugeot''),
+(35, ''Pontiac''),
+(36, ''Porche''),
+(37, ''Renault''),
+(38, ''Rolls-Royce''),
+(39, ''Rover''),
+(40, ''Saab''),
+(41, ''SEAT''),
+(42, ''Skoda''),
+(43, ''Subaru''),
+(44, ''Suzuki''),
+(45, ''Toyota''),
+(46, ''UAZ''),
+(47, ''Volkswagen''),
+(48, ''Volvo''),
+(49, ''GAZ'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `motion`
+-- Table structure for table `model`
+--
+
+DROP TABLE IF EXISTS `model`;
+CREATE TABLE IF NOT EXISTS `model` (
+  `model_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `model_name` varchar(15) NOT NULL,
+  `make_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`model_id`),
+  KEY `make_id` (`make_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `model`
+--
+
+INSERT INTO `model` (`model_id`, `model_name`, `make_id`) VALUES
+(1, ''test'', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `motion`
 --
 
 DROP TABLE IF EXISTS `motion`;
@@ -477,18 +499,18 @@ CREATE TABLE IF NOT EXISTS `motion` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
--- Andmete tõmmistamine tabelile `motion`
+-- Dumping data for table `motion`
 --
 
 INSERT INTO `motion` (`motion_id`, `motion_name`) VALUES
-(1, 'esivedu'),
-(2, 'tagavedu'),
-(3, 'nelikvedu');
+(1, ''esivedu''),
+(2, ''tagavedu''),
+(3, ''nelikvedu'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `muu`
+-- Table structure for table `muu`
 --
 
 DROP TABLE IF EXISTS `muu`;
@@ -501,7 +523,7 @@ CREATE TABLE IF NOT EXISTS `muu` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `muudlisad`
+-- Table structure for table `muudlisad`
 --
 
 DROP TABLE IF EXISTS `muudlisad`;
@@ -514,7 +536,7 @@ CREATE TABLE IF NOT EXISTS `muudlisad` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `price`
+-- Table structure for table `price`
 --
 
 DROP TABLE IF EXISTS `price`;
@@ -527,7 +549,7 @@ CREATE TABLE IF NOT EXISTS `price` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `reg`
+-- Table structure for table `reg`
 --
 
 DROP TABLE IF EXISTS `reg`;
@@ -540,7 +562,7 @@ CREATE TABLE IF NOT EXISTS `reg` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `roolivoim`
+-- Table structure for table `roolivoim`
 --
 
 DROP TABLE IF EXISTS `roolivoim`;
@@ -553,7 +575,7 @@ CREATE TABLE IF NOT EXISTS `roolivoim` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `user`
+-- Table structure for table `user`
 --
 
 DROP TABLE IF EXISTS `user`;
@@ -561,7 +583,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `deleted` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `deleted` tinyint(3) unsigned NOT NULL DEFAULT ''0'',
   `first_name` varchar(32) NOT NULL,
   `last_name` varchar(32) NOT NULL,
   `email` varchar(1024) NOT NULL,
@@ -569,18 +591,18 @@ CREATE TABLE IF NOT EXISTS `user` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Andmete tõmmistamine tabelile `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, `last_name`, `email`) VALUES
-(1, 'demo', 'demo', 0, '', '', ''),
-(2, 'Lenard', '123456', 0, 'Lenard', 'Lätte', 'lenard@buytec.eu'),
-(3, 'tanelkolga', 'longdrink', 0, 'tanel', 'kolga', 'kokoko@hot.ee');
+(1, ''demo'', ''demo'', 0, '''', '''', ''''),
+(2, ''Lenard'', ''123456'', 0, ''Lenard'', ''Lätte'', ''lenard@buytec.eu''),
+(3, ''tanelkolga'', ''longdrink'', 0, ''tanel'', ''kolga'', ''kokoko@hot.ee'');
 
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `vin`
+-- Table structure for table `vin`
 --
 
 DROP TABLE IF EXISTS `vin`;
@@ -593,7 +615,7 @@ CREATE TABLE IF NOT EXISTS `vin` (
 -- --------------------------------------------------------
 
 --
--- Tabeli struktuur tabelile `year`
+-- Table structure for table `year`
 --
 
 DROP TABLE IF EXISTS `year`;
@@ -606,7 +628,7 @@ CREATE TABLE IF NOT EXISTS `year` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=67 ;
 
 --
--- Andmete tõmmistamine tabelile `year`
+-- Dumping data for table `year`
 --
 
 INSERT INTO `year` (`year_id`, `year_name`) VALUES
@@ -677,11 +699,11 @@ INSERT INTO `year` (`year_id`, `year_name`) VALUES
 (66, 2014);
 
 --
--- Tõmmistatud tabelite piirangud
+-- Constraints for dumped tables
 --
 
 --
--- Piirangud tabelile `kuulutus`
+-- Constraints for table `kuulutus`
 --
 ALTER TABLE `kuulutus`
   ADD CONSTRAINT `kuulutus_ibfk_13` FOREIGN KEY (`muudlisad_id`) REFERENCES `muudlisad` (`muudlisad_id`),
@@ -700,4 +722,10 @@ ALTER TABLE `kuulutus`
   ADD CONSTRAINT `kuulutus_ibfk_7` FOREIGN KEY (`color_id`) REFERENCES `color` (`color_id`),
   ADD CONSTRAINT `kuulutus_ibfk_8` FOREIGN KEY (`vin_id`) REFERENCES `vin` (`vin_id`),
   ADD CONSTRAINT `kuulutus_ibfk_9` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`);
+
+--
+-- Constraints for table `model`
+--
+ALTER TABLE `model`
+  ADD CONSTRAINT `model_ibfk_1` FOREIGN KEY (`make_id`) REFERENCES `make` (`make_id`);
 SET FOREIGN_KEY_CHECKS=1;
