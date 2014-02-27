@@ -33,13 +33,13 @@ CREATE TABLE IF NOT EXISTS `body_type` (
 --
 
 INSERT INTO `body_type` (`body_type_id`, `body_type_name`) VALUES
-(1, ''Sedaan''),
-(2, ''Luukpära''),
-(3, ''Universaal''),
-(4, ''Mahtuniversaal''),
-(5, ''Kupee''),
-(6, ''Kabriolett''),
-(7, ''Pikap'');
+(1, 'Sedaan'),
+(2, 'Luukpära'),
+(3, 'Universaal'),
+(4, 'Mahtuniversaal'),
+(5, 'Kupee'),
+(6, 'Kabriolett'),
+(7, 'Pikap');
 
 -- --------------------------------------------------------
 
@@ -65,9 +65,9 @@ CREATE TABLE IF NOT EXISTS `car` (
 --
 
 INSERT INTO `car` (`car_id`, `car_title`, `car_info`, `car_vin`, `car_img`, `car_created`, `user_id`) VALUES
-(1, ''Auto1'', ''Auto1 tekst'', 1234, ''http://www.extremetech.com/wp-content/uploads/2012/12/Audi-A1.jpg'', ''2014-02-07 11:00:09'', 1),
-(2, ''Auto 2'', ''Auto 2 tekst'', 12345, ''http://images.dailytech.com/nimage/m_l_13.jpg'', ''2014-02-07 11:00:30'', 1),
-(3, ''Auto 4'', ''Auto 4'', 2342, ''https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQHkD1nKz-MH1SWbA1neZfNIRNUgJ2pcFkrAZ6XpqbJBWqmOG6a'', ''2014-02-07 11:19:36'', 1);
+(1, 'Auto1', 'Auto1 tekst', 1234, 'http://www.extremetech.com/wp-content/uploads/2012/12/Audi-A1.jpg', '2014-02-07 11:00:09', 1),
+(2, 'Auto 2', 'Auto 2 tekst', 12345, 'http://images.dailytech.com/nimage/m_l_13.jpg', '2014-02-07 11:00:30', 1),
+(3, 'Auto 4', 'Auto 4', 2342, 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQHkD1nKz-MH1SWbA1neZfNIRNUgJ2pcFkrAZ6XpqbJBWqmOG6a', '2014-02-07 11:19:36', 1);
 
 -- --------------------------------------------------------
 
@@ -87,68 +87,68 @@ CREATE TABLE IF NOT EXISTS `city` (
 --
 
 INSERT INTO `city` (`city_id`, `city_name`) VALUES
-(1, ''Abja-Paluoja''),
-(2, ''Antsla''),
-(3, ''Elva''),
-(4, ''Haapsalu''),
-(5, ''Jõgeva''),
-(6, ''Jõhvi''),
-(7, ''Kallaste''),
-(8, ''Kärdla''),
-(9, ''Karksi-Nuia''),
-(10, ''Kehra''),
-(11, ''Keila''),
-(12, ''Kilingi-Nõmme''),
-(13, ''Kiviõli''),
-(14, ''Kohta-Järve''),
-(15, ''Kunda''),
-(16, ''Kuressaare''),
-(17, ''Lihula''),
-(18, ''Loksa''),
-(19, ''Maardu''),
-(20, ''Mõisaküla''),
-(21, ''Mustvee''),
-(22, ''Narva''),
-(23, ''Narva-Jõesuu''),
-(24, ''Otepää''),
-(25, ''Paide''),
-(26, ''Paldiski''),
-(27, ''Pärnu''),
-(28, ''Põltsamaa''),
-(29, ''Põlva''),
-(30, ''Püssi''),
-(31, ''Rakvere''),
-(32, ''Räpina''),
-(33, ''Rapla''),
-(34, ''Saue''),
-(35, ''Sillamäe''),
-(36, ''Sindi''),
-(37, ''Suure-Jaani''),
-(38, ''Tallinn''),
-(39, ''Tamsalu''),
-(40, ''Tapa''),
-(41, ''Tartu''),
-(42, ''Tõrva''),
-(43, ''Türi''),
-(44, ''Valga''),
-(45, ''Viljandi''),
-(46, ''Võhma''),
-(47, ''Võru''),
-(48, ''Harjumaa''),
-(49, ''Hiiumaa''),
-(50, ''Ida-Virumaa''),
-(51, ''Järvamaa''),
-(52, ''Jõgevamaa''),
-(53, ''Lääne-Virumaa''),
-(54, ''Läänemaa''),
-(55, ''Pärnumaa''),
-(56, ''Põlvamaa''),
-(57, ''Raplamaa''),
-(58, ''Saaremaa''),
-(59, ''Tartumaa''),
-(60, ''Valgamaa''),
-(61, ''Viljandimaa''),
-(62, ''Võrumaa'');
+(1, 'Abja-Paluoja'),
+(2, 'Antsla'),
+(3, 'Elva'),
+(4, 'Haapsalu'),
+(5, 'Jõgeva'),
+(6, 'Jõhvi'),
+(7, 'Kallaste'),
+(8, 'Kärdla'),
+(9, 'Karksi-Nuia'),
+(10, 'Kehra'),
+(11, 'Keila'),
+(12, 'Kilingi-Nõmme'),
+(13, 'Kiviõli'),
+(14, 'Kohta-Järve'),
+(15, 'Kunda'),
+(16, 'Kuressaare'),
+(17, 'Lihula'),
+(18, 'Loksa'),
+(19, 'Maardu'),
+(20, 'Mõisaküla'),
+(21, 'Mustvee'),
+(22, 'Narva'),
+(23, 'Narva-Jõesuu'),
+(24, 'Otepää'),
+(25, 'Paide'),
+(26, 'Paldiski'),
+(27, 'Pärnu'),
+(28, 'Põltsamaa'),
+(29, 'Põlva'),
+(30, 'Püssi'),
+(31, 'Rakvere'),
+(32, 'Räpina'),
+(33, 'Rapla'),
+(34, 'Saue'),
+(35, 'Sillamäe'),
+(36, 'Sindi'),
+(37, 'Suure-Jaani'),
+(38, 'Tallinn'),
+(39, 'Tamsalu'),
+(40, 'Tapa'),
+(41, 'Tartu'),
+(42, 'Tõrva'),
+(43, 'Türi'),
+(44, 'Valga'),
+(45, 'Viljandi'),
+(46, 'Võhma'),
+(47, 'Võru'),
+(48, 'Harjumaa'),
+(49, 'Hiiumaa'),
+(50, 'Ida-Virumaa'),
+(51, 'Järvamaa'),
+(52, 'Jõgevamaa'),
+(53, 'Lääne-Virumaa'),
+(54, 'Läänemaa'),
+(55, 'Pärnumaa'),
+(56, 'Põlvamaa'),
+(57, 'Raplamaa'),
+(58, 'Saaremaa'),
+(59, 'Tartumaa'),
+(60, 'Valgamaa'),
+(61, 'Viljandimaa'),
+(62, 'Võrumaa');
 
 -- --------------------------------------------------------
 
@@ -168,19 +168,19 @@ CREATE TABLE IF NOT EXISTS `color` (
 --
 
 INSERT INTO `color` (`color_id`, `color_name`) VALUES
-(1, ''beež''),
-(2, ''hall''),
-(3, ''kollane''),
-(4, ''kuldne''),
-(5, ''lilla''),
-(6, ''must''),
-(7, ''oranž''),
-(8, ''pruun''),
-(9, ''punane''),
-(10, ''roheline''),
-(11, ''roosa''),
-(12, ''sinine''),
-(13, ''valge'');
+(1, 'beež'),
+(2, 'hall'),
+(3, 'kollane'),
+(4, 'kuldne'),
+(5, 'lilla'),
+(6, 'must'),
+(7, 'oranž'),
+(8, 'pruun'),
+(9, 'punane'),
+(10, 'roheline'),
+(11, 'roosa'),
+(12, 'sinine'),
+(13, 'valge');
 
 -- --------------------------------------------------------
 
@@ -200,39 +200,39 @@ CREATE TABLE IF NOT EXISTS `country` (
 --
 
 INSERT INTO `country` (`country_id`, `country_name`) VALUES
-(1, ''Ameerika Ühendriigid''),
-(2, ''Austria''),
-(3, ''Belgia''),
-(4, ''Bulgaaria''),
-(5, ''Eesti''),
-(6, ''Hispaania''),
-(7, ''Holland''),
-(8, ''Iirimaa''),
-(9, ''Inglismaa''),
-(10, ''Itaalia''),
-(11, ''Jaapan''),
-(12, ''Kreeka''),
-(13, ''Küpros''),
-(14, ''Leedu''),
-(15, ''Luksenburg''),
-(16, ''Läti''),
-(17, ''Malta''),
-(18, ''Norra''),
-(19, ''Poola''),
-(20, ''Portugal''),
-(21, ''Prantsusmaa''),
-(22, ''Rootsi''),
-(23, ''Rumeenia''),
-(24, ''Saksamaa''),
-(25, ''Slovakkia''),
-(26, ''Sloveenia''),
-(27, ''Soome''),
-(28, ''Suurbritannia''),
-(29, ''Taani''),
-(30, ''Tšehhi''),
-(31, ''Ungari''),
-(32, ''Venemaa''),
-(33, ''Šveits'');
+(1, 'Ameerika Ühendriigid'),
+(2, 'Austria'),
+(3, 'Belgia'),
+(4, 'Bulgaaria'),
+(5, 'Eesti'),
+(6, 'Hispaania'),
+(7, 'Holland'),
+(8, 'Iirimaa'),
+(9, 'Inglismaa'),
+(10, 'Itaalia'),
+(11, 'Jaapan'),
+(12, 'Kreeka'),
+(13, 'Küpros'),
+(14, 'Leedu'),
+(15, 'Luksenburg'),
+(16, 'Läti'),
+(17, 'Malta'),
+(18, 'Norra'),
+(19, 'Poola'),
+(20, 'Portugal'),
+(21, 'Prantsusmaa'),
+(22, 'Rootsi'),
+(23, 'Rumeenia'),
+(24, 'Saksamaa'),
+(25, 'Slovakkia'),
+(26, 'Sloveenia'),
+(27, 'Soome'),
+(28, 'Suurbritannia'),
+(29, 'Taani'),
+(30, 'Tšehhi'),
+(31, 'Ungari'),
+(32, 'Venemaa'),
+(33, 'Šveits');
 
 -- --------------------------------------------------------
 
@@ -281,10 +281,10 @@ CREATE TABLE IF NOT EXISTS `fuel_type` (
 --
 
 INSERT INTO `fuel_type` (`fuel_type_id`, `fuel_type_name`) VALUES
-(1, ''Bensiin''),
-(2, ''Diisel''),
-(3, ''Hübriid''),
-(4, ''Elekter'');
+(1, 'Bensiin'),
+(2, 'Diisel'),
+(3, 'Hübriid'),
+(4, 'Elekter');
 
 -- --------------------------------------------------------
 
@@ -306,9 +306,9 @@ CREATE TABLE IF NOT EXISTS `gearbox` (
 --
 
 INSERT INTO `gearbox` (`gearbox_id`, `gearbox_name`) VALUES
-(3, ''automaat''),
-(2, ''manuaal''),
-(4, ''poolautomaat'');
+(3, 'automaat'),
+(2, 'manuaal'),
+(4, 'poolautomaat');
 
 -- --------------------------------------------------------
 
@@ -331,7 +331,7 @@ CREATE TABLE IF NOT EXISTS `km` (
 
 DROP TABLE IF EXISTS `kuulutus`;
 CREATE TABLE IF NOT EXISTS `kuulutus` (
-  `body_type_id` int(32) unsigned NOT NULL DEFAULT ''0'',
+  `body_type_id` int(32) unsigned NOT NULL DEFAULT '0',
   `make_id` int(11) unsigned DEFAULT NULL,
   `price_id` int(10) unsigned DEFAULT NULL,
   `fuel_type_id` int(10) unsigned DEFAULT NULL,
@@ -413,55 +413,55 @@ CREATE TABLE IF NOT EXISTS `make` (
 --
 
 INSERT INTO `make` (`make_id`, `make_name`) VALUES
-(1, ''Alfa Romeo''),
-(2, ''Audi''),
-(3, ''Bentley''),
-(4, ''BMW''),
-(5, ''Cadillac''),
-(6, ''Chevrolet''),
-(7, ''Chrysler''),
-(8, ''Citroen''),
-(9, ''Dacia''),
-(10, ''Daewoo''),
-(11, ''Dodge''),
-(12, ''Ferrari''),
-(13, ''Fiat''),
-(14, ''Ford''),
-(15, ''Honda''),
-(16, ''Hummer''),
-(17, ''Hyundai''),
-(18, ''Jaguar''),
-(19, ''Jeep''),
-(20, ''Kia''),
-(21, ''Lada''),
-(22, ''Lamborghini''),
-(23, ''Lancia''),
-(24, ''Land Rover''),
-(25, ''Lexus''),
-(26, ''Lotus''),
-(27, ''Maserati''),
-(28, ''Mazda''),
-(29, ''Mercedes-Benz''),
-(30, ''Mitshubishi''),
-(31, ''Moskvich''),
-(32, ''Nissan''),
-(33, ''Opel''),
-(34, ''Peugeot''),
-(35, ''Pontiac''),
-(36, ''Porche''),
-(37, ''Renault''),
-(38, ''Rolls-Royce''),
-(39, ''Rover''),
-(40, ''Saab''),
-(41, ''SEAT''),
-(42, ''Skoda''),
-(43, ''Subaru''),
-(44, ''Suzuki''),
-(45, ''Toyota''),
-(46, ''UAZ''),
-(47, ''Volkswagen''),
-(48, ''Volvo''),
-(49, ''GAZ'');
+(1, 'Alfa Romeo'),
+(2, 'Audi'),
+(3, 'Bentley'),
+(4, 'BMW'),
+(5, 'Cadillac'),
+(6, 'Chevrolet'),
+(7, 'Chrysler'),
+(8, 'Citroen'),
+(9, 'Dacia'),
+(10, 'Daewoo'),
+(11, 'Dodge'),
+(12, 'Ferrari'),
+(13, 'Fiat'),
+(14, 'Ford'),
+(15, 'Honda'),
+(16, 'Hummer'),
+(17, 'Hyundai'),
+(18, 'Jaguar'),
+(19, 'Jeep'),
+(20, 'Kia'),
+(21, 'Lada'),
+(22, 'Lamborghini'),
+(23, 'Lancia'),
+(24, 'Land Rover'),
+(25, 'Lexus'),
+(26, 'Lotus'),
+(27, 'Maserati'),
+(28, 'Mazda'),
+(29, 'Mercedes-Benz'),
+(30, 'Mitshubishi'),
+(31, 'Moskvich'),
+(32, 'Nissan'),
+(33, 'Opel'),
+(34, 'Peugeot'),
+(35, 'Pontiac'),
+(36, 'Porche'),
+(37, 'Renault'),
+(38, 'Rolls-Royce'),
+(39, 'Rover'),
+(40, 'Saab'),
+(41, 'SEAT'),
+(42, 'Skoda'),
+(43, 'Subaru'),
+(44, 'Suzuki'),
+(45, 'Toyota'),
+(46, 'UAZ'),
+(47, 'Volkswagen'),
+(48, 'Volvo'),
+(49, 'GAZ');
 
 -- --------------------------------------------------------
 
@@ -483,7 +483,7 @@ CREATE TABLE IF NOT EXISTS `model` (
 --
 
 INSERT INTO `model` (`model_id`, `model_name`, `make_id`) VALUES
-(1, ''test'', 1);
+(1, 'test', 1);
 
 -- --------------------------------------------------------
 
@@ -503,9 +503,9 @@ CREATE TABLE IF NOT EXISTS `motion` (
 --
 
 INSERT INTO `motion` (`motion_id`, `motion_name`) VALUES
-(1, ''esivedu''),
-(2, ''tagavedu''),
-(3, ''nelikvedu'');
+(1, 'esivedu'),
+(2, 'tagavedu'),
+(3, 'nelikvedu');
 
 -- --------------------------------------------------------
 
@@ -583,7 +583,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
   `password` varchar(32) NOT NULL,
-  `deleted` tinyint(3) unsigned NOT NULL DEFAULT ''0'',
+  `deleted` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `first_name` varchar(32) NOT NULL,
   `last_name` varchar(32) NOT NULL,
   `email` varchar(1024) NOT NULL,
@@ -595,9 +595,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `username`, `password`, `deleted`, `first_name`, `last_name`, `email`) VALUES
-(1, ''demo'', ''demo'', 0, '''', '''', ''''),
-(2, ''Lenard'', ''123456'', 0, ''Lenard'', ''Lätte'', ''lenard@buytec.eu''),
-(3, ''tanelkolga'', ''longdrink'', 0, ''tanel'', ''kolga'', ''kokoko@hot.ee'');
+(1, 'demo', 'demo', 0, '', '', ''),
+(2, 'Lenard', '123456', 0, 'Lenard', 'Lätte', 'lenard@buytec.eu'),
+(3, 'tanelkolga', 'longdrink', 0, 'tanel', 'kolga', 'kokoko@hot.ee');
 
 -- --------------------------------------------------------
 
