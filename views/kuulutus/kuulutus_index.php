@@ -309,6 +309,8 @@
 <input type="button" value="Vali pildid" id="fakeBrowse" onclick="HandleBrowseClick();"/>
 
 </br>
+
+
 <button onclick="submitForm()">Salvesta</button>
 
 <script>
