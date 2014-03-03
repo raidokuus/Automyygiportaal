@@ -2,9 +2,9 @@
 
 class welcome extends Controller{
 
-	function index(){
-    $this->users = get_all("SELECT * FROM user");
-		$this->cars = get_all("SELECT * FROM car");
+    function index(){
+        $this->users = get_all("SELECT * FROM user");
+        $this->cars = get_all("SELECT * FROM car");
         $this->make_index = get_all('SELECT * FROM make');
         $this->body_type_index = get_all('SELECT * FROM body_type');
         $this->fuel_type_index = get_all('SELECT * FROM fuel_type');
@@ -22,15 +22,18 @@ class welcome extends Controller{
         $this->door_index = get_all('SELECT * FROM door');
         $this->price_index = get_all('SELECT * FROM price');
         $this->muudlisad_index = get_all('SELECT * FROM muudlisad');
-	}
+    }
 
     function index_ajax(){
-		echo "\$_POST:<br>";
+        $make_id = $_POST['make_id'];
+        echo json_encode(get_all("SELECT * FROM model WHERE make_id='$make_id'"));
+        exit();
+        echo "\$_POST:<br>";
         var_dump($_POST);
     }
 
-	function index_post(){
-		echo "\$_POST:<br>";
-		var_dump($_POST);
-	}
+    function index_post(){
+        echo "\$_POST:<br>";
+        var_dump($_POST);
+    }
 }
