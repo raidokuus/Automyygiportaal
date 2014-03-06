@@ -61,6 +61,7 @@
                  -->			</ul>
             <ul class="nav navbar-nav navbar-right">
                 <? if($this->auth->logged_in):?>
+                    <li><a href="<?=BASE_URL?>minukuulutused">Minu kuulutused</a></li>
                     <li><a href="<?=BASE_URL?>kuulutus">Lisa kuulutus</a></li>
                     <li><a href="<?=BASE_URL?>logout">Välju</a></li>
                 <? else: ?>

@@ -2350,7 +2350,7 @@ ALTER TABLE `kuulutus`
   ADD CONSTRAINT `kuulutus_ibfk_8` FOREIGN KEY (`vin_id`) REFERENCES `vin` (`vin_id`),
   ADD CONSTRAINT `kuulutus_ibfk_9` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`);
 
---
+
 -- Piirangud tabelile `model`
 --
 ALTER TABLE `model`

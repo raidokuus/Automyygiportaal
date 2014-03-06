@@ -1,7 +1,7 @@
 <?php
 
 // Project constants
-define('PROJECT_NAME', 'autoportaal');
+define('PROJECT_NAME', 'Autoportaal');
 define('DEFAULT_CONTROLLER', 'welcome');
 define('DEBUG', false);
 
