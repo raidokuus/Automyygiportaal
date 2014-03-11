@@ -311,7 +311,7 @@
 </br>
 
 
-<button onclick="submitForm()">Salvesta</button>
+<a class="btn btn-success" a href="minukuulutused">Salvesta</a>
 
 <script>
     function submitForm() {
