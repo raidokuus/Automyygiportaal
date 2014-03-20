@@ -15,7 +15,7 @@
 <div class="span8">
 <div class="control-group">
     <label class="control-label">Keretüüp:</label>
-    <select>
+    <select name="data[body_type_id]">
         <option selected="selected" disabled="disabled">---</option>
         <? foreach ($body_type_index as $body_type): ?>
             <option
@@ -25,7 +25,7 @@
 </select>
 </br>
 <label class="control-label">Mark:</label>
-<select onchange="get_models()" id="make">
+<select name='data[make_id]' onchange="get_models()" id="make">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($make_index as $make): ?>
         <option
@@ -34,7 +34,7 @@
 </select>
 </br>
 <label class="control-label">Mudel:</label>
-<select id="model">
+<select name='data[make_id]' id="model">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($make_s as $make): ?>
         <option
@@ -43,7 +43,7 @@
 </select>
 </br>
 <label class="control-label">VIN-kood:</label>
-<input>
+<input name="data[vin_id]">
 <? foreach ($vin_index as $vin_type): ?>
     <div class="input-group">
         <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
@@ -51,13 +51,13 @@
 <? endforeach ?>
 </br>
 <label class="control-label">Reg.number:</label>
-<input placeholder="näide:123ABC">
+<input name="data[reg_id]" placeholder="näide:123ABC">
 <? foreach ($reg_index as $reg_type): ?>
     <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
 <? endforeach ?>
 </br>
 <label class="control-label">Aasta:</label>
-<select>
+<select name="data[year_id]">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($year_index as $year_type): ?>
         <option
@@ -66,7 +66,7 @@
 </select>
 </br>
 <label class="control-label">Värv:</label>
-<select>
+<select name="data[color_id]">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($color_index as $color_type): ?>
         <option
@@ -75,7 +75,7 @@
 </select>
 </br>
 <label class="control-label">Sõiduki läbisõit(km):</label>
-<input placeholder="näide:85000">
+<input name="data[]" placeholder="näide:85000">
 <? foreach ($km_index as $km_type): ?>
     <div class="input-group">
         <input value="<?= $km_type['km_id'] ?>"><?= $km_type['km_name'] ?>
@@ -83,7 +83,7 @@
 <? endforeach ?>
 </br>
 <label class="control-label">Kütus:</label>
-<select>
+<select name="data[fuel_type_id]">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($fuel_type_index as $fuel_type): ?>
         <option
@@ -92,7 +92,7 @@
 </select>
 </br>
 <label class="control-label">Uste arv:</label>
-<select>
+<select name="data[door_id]">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($door_index as $door_type): ?>
         <option
@@ -101,7 +101,7 @@
 </select>
 </br>
 <label class="control-label">Hind:</label>
-<input>
+<input name="data[price_id]">
 <? foreach ($price_index as $price_type): ?>
     <div class="input-group">
         <input
@@ -110,7 +110,7 @@
 <? endforeach ?>
 </br>
 <label class="control-label">Käigukast:</label>
-<select>
+<select name="data[gearbox_id]">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($gearbox_index as $gearbox_type): ?>
         <option
@@ -119,7 +119,7 @@
 </select>
 </br>
 <label class="control-label">Vedav sild:</label>
-<select>
+<select name="data[motion_id]">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($motion_index as $motion_type): ?>
         <option
@@ -128,7 +128,7 @@
 </select>
 </br>
 <label class="control-label">Mootori võimsus(kW):</label>
-<input>
+<input name="data[kw_id]">
 <? foreach ($kw_index as $kw_type): ?>
     <div class="input-group">
         <input value="<?= $kw_type['kw_id'] ?>"><?= $kw_type['kw_name'] ?>
@@ -136,7 +136,7 @@
 <? endforeach ?>
 </br>
 <label class="control-label">Toodud riigist:</label>
-<select>
+<select name="data[country_id]">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($country_index as $country_type): ?>
         <option
@@ -145,7 +145,7 @@
 </select>
 </br>
 <label class="control-label">Sõiduki asukoht:</label>
-<select>
+<select name="data[city_id]">
     <option selected="selected" disabled="disabled">---</option>
     <? foreach ($city_index as $city_type): ?>
         <option
@@ -154,7 +154,7 @@
 </select>
 </br>
 <label class="control-label">Muu:</label>
-<textarea class="form-control" rows="4" style="width: 300px;"></textarea>
+<textarea name="data[muu_id]" class="form-control" rows="4" style="width: 300px;"></textarea>
 <? foreach ($muu_index as $muu_type): ?>
     <input value="<?= $muu_type['muu_id'] ?>"><?= $muu_type['muu_name'] ?>
 <? endforeach ?>
@@ -171,43 +171,43 @@
     <tr>
         <td class="center">
 
-            <input type="checkbox" name="query_myTextEditBox"> roolivõimendi </br>
-            <input type="checkbox" name="query_myTextEditBox"> kesklukustus </br>
-            <input type="checkbox" name="query_myTextEditBox"> ABS pidurid </br>
-            <input type="checkbox" name="query_myTextEditBox"> turvapadi </br>
-            <input type="checkbox" name="query_myTextEditBox"> signalisatsioon </br>
-            <input type="checkbox" name="query_myTextEditBox"> immobilaiser </br>
-            <input type="checkbox" name="query_myTextEditBox"> külglibisemise vastane seade </br>
-            <input type="checkbox" name="query_myTextEditBox"> veojõukontroll </br>
-            <input type="checkbox" name="query_myTextEditBox"> lisapidurituli </br>
-            <input type="checkbox" name="query_myTextEditBox"> turvavööde eelpingutid esiistmetel </br>
+            <input type="checkbox" name="data[kuulutus_roolivoimendi]"> roolivõimendi </br>
+            <input type="checkbox" name="data[kuulutus_kesklukustus]"> kesklukustus </br>
+            <input type="checkbox" name="data[kuulutus_abs]"> ABS pidurid </br>
+            <input type="checkbox" name="data[kuulutus_turvapadi]"> turvapadi </br>
+            <input type="checkbox" name="data[kuulutus_signalisatsioon]"> signalisatsioon </br>
+            <input type="checkbox" name="data[kuulutus_immobilaiser]"> immobilaiser </br>
+            <input type="checkbox" name="data[kuulutus_kulglibisemine]"> külglibisemise vastane seade </br>
+            <input type="checkbox" name="data[kuulutus_veojoukontroll]"> veojõukontroll </br>
+            <input type="checkbox" name="data[kuulutus_lisapidurituli]"> lisapidurituli </br>
+            <input type="checkbox" name="data[kuulutus_turvavoo]"> turvavööde eelpingutid esiistmetel </br>
 
         </td>
         <td class="center">
-            <input type="checkbox" name="query_myTextEditBox"> stereo </br>
-            <input type="checkbox" name="query_myTextEditBox"> helivõimendi </br>
-            <input type="checkbox" name="query_myTextEditBox"> kõlarid </br>
-            <input type="checkbox" name="query_myTextEditBox"> subwoofer </br>
-            <input type="checkbox" name="query_myTextEditBox"> ekraan </br>
-            <input type="checkbox" name="query_myTextEditBox"> autotelefon </br>
-            <input type="checkbox" name="query_myTextEditBox"> elektriline antenn </br>
-            <input type="checkbox" name="query_myTextEditBox"> navigatsiooniseade </br>
-            <input type="checkbox" name="query_myTextEditBox"> käed vabad süsteem </br>
-            <input type="checkbox" name="query_myTextEditBox"> GSM antenn </br>
+            <input type="checkbox" name="data[kuulutus_stereo]"> stereo </br>
+            <input type="checkbox" name="data[kuulutus_helivoimendi]"> helivõimendi </br>
+            <input type="checkbox" name="data[kuulutus_kolarid]"> kõlarid </br>
+            <input type="checkbox" name="data[kuulutus_subwoofer]"> subwoofer </br>
+            <input type="checkbox" name="data[kuulutus_ekraan]"> ekraan </br>
+            <input type="checkbox" name="data[kuulutus_autotelefon]"> autotelefon </br>
+            <input type="checkbox" name="data[kuulutus_antenn]"> elektriline antenn </br>
+            <input type="checkbox" name="data[kuulutus_navi]"> navigatsiooniseade </br>
+            <input type="checkbox" name="data[kuulutus_kaedvabad]"> käed vabad süsteem </br>
+            <input type="checkbox" name="data[kuulutus_gsm]"> GSM antenn </br>
 
 
         </td>
         <td class="center">
-            <input type="checkbox" name="query_myTextEditBox"> elektrilised välispeeglid </br>
-            <input type="checkbox" name="query_myTextEditBox"> elektrilised akende tõstukid </br>
-            <input type="checkbox" name="query_myTextEditBox"> toonitud klaasid </br>
-            <input type="checkbox" name="query_myTextEditBox"> katuseluuk </br>
-            <input type="checkbox" name="query_myTextEditBox"> püsikiiruse hoidja </br>
-            <input type="checkbox" name="query_myTextEditBox"> mootori eelsoojendus </br>
-            <input type="checkbox" name="query_myTextEditBox"> peeglid päikesesirmides </br>
-            <input type="checkbox" name="query_myTextEditBox"> rulookardin tagaaknal </br>
-            <input type="checkbox" name="query_myTextEditBox"> kohtvalgustid </br>
-            <input type="checkbox" name="query_myTextEditBox"> parkimisandurid </br>
+            <input type="checkbox" name="data[kuulutus_peeglid]"> elektrilised välispeeglid </br>
+            <input type="checkbox" name="data[kuulutus_aknad]"> elektrilised akende tõstukid </br>
+            <input type="checkbox" name="data[kuulutus_klaasid]"> toonitud klaasid </br>
+            <input type="checkbox" name="data[kuulutus_katuseluuk]"> katuseluuk </br>
+            <input type="checkbox" name="data[kuulutus_hoidja]"> püsikiiruse hoidja </br>
+            <input type="checkbox" name="data[kuulutus_mootor]"> mootori eelsoojendus </br>
+            <input type="checkbox" name="data[kuulutus_paike]"> peeglid päikesesirmides </br>
+            <input type="checkbox" name="data[kuulutus_ruloo]"> rulookardin tagaaknal </br>
+            <input type="checkbox" name="data[kuulutus_valgustid]"> kohtvalgustid </br>
+            <input type="checkbox" name="data[kuulutus_parkismisandurid]"> parkimisandurid </br>
         </td>
 
 
@@ -219,28 +219,28 @@
     </tr>
     <tr>
         <td class="center">
-            <input type="checkbox" name="query_myTextEditBox"> Xenon </br>
-            <input type="checkbox" name="query_myTextEditBox"> LED-tuled </br>
-            <input type="checkbox" name="query_myTextEditBox"> esitulede pesurid </br>
-            <input type="checkbox" name="query_myTextEditBox"> udutuled </br>
-            <input type="checkbox" name="query_myTextEditBox"> tulede korrektor </br>
-            <input type="checkbox" name="query_myTextEditBox"> valgustuspakett </br>
+            <input type="checkbox" name="data[kuulutus_xenon]"> Xenon </br>
+            <input type="checkbox" name="data[kuulutus_led]"> LED-tuled </br>
+            <input type="checkbox" name="data[kuulutus_esituled]"> esitulede pesurid </br>
+            <input type="checkbox" name="data[kuulutus_udutuled]"> udutuled </br>
+            <input type="checkbox" name="data[kuulutus_tulede]"> tulede korrektor </br>
+            <input type="checkbox" name="data[kuulutus_valgustuspakett]"> valgustuspakett </br>
         </td>
         <td class="center">
-            <input type="checkbox" name="query_myTextEditBox"> jalamatid </br>
-            <input type="checkbox" name="query_myTextEditBox"> poolnahkpolster </br>
-            <input type="checkbox" name="query_myTextEditBox"> tekstiilpolster </br>
-            <input type="checkbox" name="query_myTextEditBox"> nahkpolster </br>
-            <input type="checkbox" name="query_myTextEditBox"> istmesoojendused </br>
-            <input type="checkbox" name="query_myTextEditBox"> elektriliselt reguleeritavad istmed </br>
-            <input type="checkbox" name="query_myTextEditBox"> tagaistme seljatugi allaklapitav </br>
+            <input type="checkbox" name="data[kuulutus_jalamatid]"> jalamatid </br>
+            <input type="checkbox" name="data[kuulutus_poolnahkpolster]"> poolnahkpolster </br>
+            <input type="checkbox" name="data[kuulutus_tekstiilpolster]"> tekstiilpolster </br>
+            <input type="checkbox" name="data[kuulutus_nahkpolster]"> nahkpolster </br>
+            <input type="checkbox" name="data[kuulutus_istmesoojendused]"> istmesoojendused </br>
+            <input type="checkbox" name="data[kuulutus_istmed]"> elektriliselt reguleeritavad istmed </br>
+            <input type="checkbox" name="data[kuulutus_seljatugi]"> tagaistme seljatugi allaklapitav </br>
         </td>
         <td class="center">
-            <input type="checkbox" name="query_myTextEditBox"> tagaspoiler </br>
-            <input type="checkbox" name="query_myTextEditBox"> esispoiler </br>
-            <input type="checkbox" name="query_myTextEditBox"> sportvedrustus </br>
-            <input type="checkbox" name="query_myTextEditBox"> sportsummuti </br>
-            <input type="checkbox" name="query_myTextEditBox"> sportistmed </br>
+            <input type="checkbox" name="data[kuulutus_tagaspoiler]"> tagaspoiler </br>
+            <input type="checkbox" name="data[kuulutus_esipoiler]"> esispoiler </br>
+            <input type="checkbox" name="data[kuulutus_sportvedrustus]"> sportvedrustus </br>
+            <input type="checkbox" name="data[kuulutus_sportsummuti]"> sportsummuti </br>
+            <input type="checkbox" name="data[kuulutus_sportistmed]"> sportistmed </br>
         </td>
     </tr>
     <tr>
@@ -250,24 +250,24 @@
     </tr>
     <tr>
         <td class="center">
-            <input type="checkbox" name="query_myTextEditBox"> suverehvid </br>
-            <input type="checkbox" name="query_myTextEditBox"> lamellrehvid </br>
-            <input type="checkbox" name="query_myTextEditBox"> talverehvid </br>
-            <input type="checkbox" name="query_myTextEditBox"> valuveljed </br>
-            <input type="checkbox" name="query_myTextEditBox"> ilukilbid </br>
+            <input type="checkbox" name="data[kuulutus_suverehvid]"> suverehvid </br>
+            <input type="checkbox" name="data[kuulutus_lamellrehvid]"> lamellrehvid </br>
+            <input type="checkbox" name="data[kuulutus_talverehvid]"> talverehvid </br>
+            <input type="checkbox" name="data[kuulutus_valuveljed]"> valuveljed </br>
+            <input type="checkbox" name="data[kuulutus_ilukilbid]"> ilukilbid </br>
         </td>
         <td class="center">
-            <input type="checkbox" name="query_myTextEditBox"> reguleeritav roolisammas </br>
-            <input type="checkbox" name="query_myTextEditBox"> multifunktsionaalne rool </br>
-            <input type="checkbox" name="query_myTextEditBox"> nahkkattega rool </br>
-            <input type="checkbox" name="query_myTextEditBox"> sportrool </br>
+            <input type="checkbox" name="data[kuulutus_rooolisammas]"> reguleeritav roolisammas </br>
+            <input type="checkbox" name="data[kuulutus_multrool]"> multifunktsionaalne rool </br>
+            <input type="checkbox" name="data[kuulutus_nahkrool]"> nahkkattega rool </br>
+            <input type="checkbox" name="data[kuulutus_sportrool]"> sportrool </br>
         </td>
         <td class="center">
-            <input type="checkbox" name="query_myTextEditBox"> suusakott </br>
-            <input type="checkbox" name="query_myTextEditBox"> välistemperatuuri näidik </br>
-            <input type="checkbox" name="query_myTextEditBox"> esiklaasi soojendus </br>
-            <input type="checkbox" name="query_myTextEditBox"> tagaklaasi soojendus </br>
-            <input type="checkbox" name="query_myTextEditBox"> veokonks </br>
+            <input type="checkbox" name="data[kuulutus_suusakott]"> suusakott </br>
+            <input type="checkbox" name="data[kuulutus_tempnaidik]"> välistemperatuuri näidik </br>
+            <input type="checkbox" name="data[kuulutus_esiklaasi]"> esiklaasi soojendus </br>
+            <input type="checkbox" name="data[kuulutus_tagaklaasi]"> tagaklaasi soojendus </br>
+            <input type="checkbox" name="data[kuulutus_veokonks]"> veokonks </br>
         </td>
 
     </tr>
@@ -276,7 +276,7 @@
 <!-- TABELI LÕPP -->
 </br>
 <label class="control-label">Muud lisad:</label>
-<textarea class="form-control" rows="4" style="width: 300px;"></textarea>
+<textarea name="data[muudlisad_id]" class="form-control" rows="4" style="width: 300px;"></textarea>
 <? foreach ($muudlisad_index as $muudlisad_type): ?>
     <input value="<?= $muudlisad_type['muudlisad_id'] ?>"><?= $muudlisad_type['muudlisad_name'] ?>
 <? endforeach ?>
@@ -311,12 +311,12 @@
 </br>
 
 
-<a class="btn btn-success" a href="minukuulutused">Salvesta</a>
+<a class="btn btn-success" onclick="insert_kuulutus()" href="#">Salvesta</a>
 
 <script>
-    function submitForm() {
+    function insert_kuulutus() {
         alert('a');
-        $.post("welcome", $("#form").serialize(), function (data) {
+        $.post("kuulutus/insert", $("#form").serialize(), function (data) {
             if (data == 'OK')
                 alert('Salvestatud');
             else
@@ -342,4 +342,5 @@
             }, 'json'
         );
     }
+
 </script>

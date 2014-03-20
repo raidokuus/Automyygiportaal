@@ -29,5 +29,10 @@ class kuulutus extends Controller
 		$make_id = $_POST['make_id'];
 		echo json_encode(get_all("SELECT * FROM model WHERE make_id='$make_id'"));
 		exit();
+
 	}
+    function insert_ajax()
+    {
+        insert('kuulutus',$_POST['data']);
+    }
 }
