@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Loomise aeg: Märts 06, 2014 kell 10:38 AM
+-- Loomise aeg: Märts 20, 2014 kell 02:39 PM
 -- Serveri versioon: 5.5.32
 -- PHP versioon: 5.4.19
 
@@ -350,6 +350,68 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
   `door_id` int(10) unsigned DEFAULT NULL,
   `muudlisad_id` int(15) unsigned DEFAULT NULL,
   `km_id` int(10) unsigned DEFAULT NULL,
+  `kuulutus_roolivoimendi` smallint(11) unsigned NOT NULL,
+  `kuulutus_kesklukustus` smallint(11) unsigned NOT NULL,
+  `kuulutus_abs` smallint(11) unsigned NOT NULL,
+  `kuulutus_turvapadi` smallint(11) unsigned NOT NULL,
+  `kuulutus_signalisatsioon` smallint(11) unsigned NOT NULL,
+  `kuulutus_immobilaiser` smallint(11) unsigned NOT NULL,
+  `kuulutus_kulglibisemine` smallint(11) unsigned NOT NULL,
+  `kuulutus_veojoukontroll` smallint(11) unsigned NOT NULL,
+  `kuulutus_lisapidurituli` smallint(11) unsigned NOT NULL,
+  `kuulutus_turvavoo` smallint(11) unsigned NOT NULL,
+  `kuulutus_stereo` smallint(11) unsigned NOT NULL,
+  `kuulutus_helivoimendi` smallint(11) unsigned NOT NULL,
+  `kuulutus_kolarid` smallint(11) unsigned NOT NULL,
+  `kuulutus_subwoofer` smallint(11) unsigned NOT NULL,
+  `kuulutus_ekraan` smallint(11) unsigned NOT NULL,
+  `kuulutus_autotelefon` smallint(11) unsigned NOT NULL,
+  `kuulutus_antenn` smallint(11) unsigned NOT NULL,
+  `kuulutus_navi` smallint(11) unsigned NOT NULL,
+  `kuulutus_kaedvabad` smallint(11) unsigned NOT NULL,
+  `kuulutus_gsm` smallint(11) unsigned NOT NULL,
+  `kuulutus_peeglid` smallint(11) unsigned NOT NULL,
+  `kuulutus_aknad` smallint(11) unsigned NOT NULL,
+  `kuulutus_klaasid` smallint(11) unsigned NOT NULL,
+  `kuulutus_katuseluuk` smallint(11) unsigned NOT NULL,
+  `kuulutus_hoidja` smallint(11) unsigned NOT NULL,
+  `kuulutus_mootor` smallint(11) unsigned NOT NULL,
+  `kuulutus_paike` smallint(11) unsigned NOT NULL,
+  `kuulutus_ruloo` smallint(11) unsigned NOT NULL,
+  `kuulutus_valgustid` smallint(11) unsigned NOT NULL,
+  `kuulutus_parkimisandurid` smallint(11) unsigned NOT NULL,
+  `kuulutus_xenon` smallint(5) unsigned NOT NULL,
+  `kuulutus_led` smallint(5) unsigned NOT NULL,
+  `kuulutus_esituled` smallint(5) unsigned NOT NULL,
+  `kuulutus_udutuled` smallint(5) unsigned NOT NULL,
+  `kuulutus_tulede` smallint(5) unsigned NOT NULL,
+  `kuulutus_valgustuspakett` smallint(5) unsigned NOT NULL,
+  `kuulutus_jalamatid` smallint(5) unsigned NOT NULL,
+  `kuulutus_poolnahkpolster` smallint(5) unsigned NOT NULL,
+  `kuulutus_tekstiilpolster` smallint(5) unsigned NOT NULL,
+  `kuulutus_nahkpolster` smallint(5) unsigned NOT NULL,
+  `kuulutus_istmesoojendused` smallint(5) unsigned NOT NULL,
+  `kuulutus_istmed` smallint(5) unsigned NOT NULL,
+  `kuulutus_seljatugi` smallint(5) unsigned NOT NULL,
+  `kuulutus_tagaspoiler` smallint(5) unsigned NOT NULL,
+  `kuulutus_esispoiler` smallint(5) unsigned NOT NULL,
+  `kuulutus_sportvedrustus` smallint(5) unsigned NOT NULL,
+  `kuulutus_sportsummuti` smallint(5) unsigned NOT NULL,
+  `kuulutus_sportistmed` smallint(5) unsigned NOT NULL,
+  `kuulutus_suverehvid` smallint(5) unsigned NOT NULL,
+  `kuulutus_lamellrehvid` smallint(5) unsigned NOT NULL,
+  `kuulutus_talverehvid` smallint(5) unsigned NOT NULL,
+  `kuulutus_valuveljed` smallint(5) unsigned NOT NULL,
+  `kuulutus_ilukilbid` smallint(5) unsigned NOT NULL,
+  `kuulutus_roolisammas` smallint(5) unsigned NOT NULL,
+  `kuulutus_multrool` smallint(5) unsigned NOT NULL,
+  `kuulutus_nahkrool` smallint(5) unsigned NOT NULL,
+  `kuulutus_sportrool` smallint(5) unsigned NOT NULL,
+  `kuulutus_suusakott` smallint(5) unsigned NOT NULL,
+  `kuulutus_tempnaidik` smallint(5) unsigned NOT NULL,
+  `kuulutus_esiklaasi` smallint(5) unsigned NOT NULL,
+  `kuulutus_tagaklaasi` smallint(5) unsigned NOT NULL,
+  `kuulutus_veokonks` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`body_type_id`),
   UNIQUE KEY `body_type` (`body_type_id`),
   UNIQUE KEY `year` (`year_id`),
@@ -390,8 +452,8 @@ CREATE TABLE IF NOT EXISTS `kuulutus` (
 -- Andmete tõmmistamine tabelile `kuulutus`
 --
 
-INSERT INTO `kuulutus` (`body_type_id`, `make_id`, `price_id`, `fuel_type_id`, `year_id`, `gearbox_id`, `color_id`, `vin_id`, `reg_id`, `motion_id`, `muu_id`, `country_id`, `city_id`, `kw_id`, `door_id`, `muudlisad_id`, `km_id`) VALUES
-(1, 1, NULL, 1, 2, 2, 1, NULL, NULL, 1, NULL, 1, 1, NULL, 1, NULL, 0);
+INSERT INTO `kuulutus` (`body_type_id`, `make_id`, `price_id`, `fuel_type_id`, `year_id`, `gearbox_id`, `color_id`, `vin_id`, `reg_id`, `motion_id`, `muu_id`, `country_id`, `city_id`, `kw_id`, `door_id`, `muudlisad_id`, `km_id`, `kuulutus_roolivoimendi`, `kuulutus_kesklukustus`, `kuulutus_abs`, `kuulutus_turvapadi`, `kuulutus_signalisatsioon`, `kuulutus_immobilaiser`, `kuulutus_kulglibisemine`, `kuulutus_veojoukontroll`, `kuulutus_lisapidurituli`, `kuulutus_turvavoo`, `kuulutus_stereo`, `kuulutus_helivoimendi`, `kuulutus_kolarid`, `kuulutus_subwoofer`, `kuulutus_ekraan`, `kuulutus_autotelefon`, `kuulutus_antenn`, `kuulutus_navi`, `kuulutus_kaedvabad`, `kuulutus_gsm`, `kuulutus_peeglid`, `kuulutus_aknad`, `kuulutus_klaasid`, `kuulutus_katuseluuk`, `kuulutus_hoidja`, `kuulutus_mootor`, `kuulutus_paike`, `kuulutus_ruloo`, `kuulutus_valgustid`, `kuulutus_parkimisandurid`, `kuulutus_xenon`, `kuulutus_led`, `kuulutus_esituled`, `kuulutus_udutuled`, `kuulutus_tulede`, `kuulutus_valgustuspakett`, `kuulutus_jalamatid`, `kuulutus_poolnahkpolster`, `kuulutus_tekstiilpolster`, `kuulutus_nahkpolster`, `kuulutus_istmesoojendused`, `kuulutus_istmed`, `kuulutus_seljatugi`, `kuulutus_tagaspoiler`, `kuulutus_esispoiler`, `kuulutus_sportvedrustus`, `kuulutus_sportsummuti`, `kuulutus_sportistmed`, `kuulutus_suverehvid`, `kuulutus_lamellrehvid`, `kuulutus_talverehvid`, `kuulutus_valuveljed`, `kuulutus_ilukilbid`, `kuulutus_roolisammas`, `kuulutus_multrool`, `kuulutus_nahkrool`, `kuulutus_sportrool`, `kuulutus_suusakott`, `kuulutus_tempnaidik`, `kuulutus_esiklaasi`, `kuulutus_tagaklaasi`, `kuulutus_veokonks`) VALUES
+(1, 1, NULL, 1, 2, 2, 1, NULL, NULL, 1, NULL, 1, 1, NULL, 1, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
