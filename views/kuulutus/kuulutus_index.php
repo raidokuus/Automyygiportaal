@@ -24,6 +24,8 @@
 </div>
 </select>
 </br>
+
+
 <label class="control-label">Mark:</label>
 <select name='data[make_id]' onchange="get_models()" id="make">
     <option selected="selected" disabled="disabled">---</option>
@@ -33,28 +35,23 @@
     <? endforeach ?>
 </select>
 </br>
+
+
 <label class="control-label">Mudel:</label>
-<select name='data[make_id]' id="model">
+<select name='data[model_id]' id="model">
     <option selected="selected" disabled="disabled">---</option>
-    <? foreach ($make_s as $make): ?>
-        <option
-            value="<?= $make['make_id'] ?>"><?= $make['make_name'] ?></option>
+    <? foreach ($model_index as $model): ?>
+        <option value="<?= $make['model_id'] ?>"><?= $model['model_name'] ?></option>
     <? endforeach ?>
 </select>
+
+
 </br>
 <label class="control-label">VIN-kood:</label>
-<input name="data[vin_id]">
-<? foreach ($vin_index as $vin_type): ?>
-    <div class="input-group">
-        <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
-    </div>
-<? endforeach ?>
+<input name="data[vin]">
 </br>
 <label class="control-label">Reg.number:</label>
-<input name="data[reg_id]" placeholder="näide:123ABC">
-<? foreach ($reg_index as $reg_type): ?>
-    <input value="<?= $vin_type['vin_id'] ?>"><?= $vin_type['vin_name'] ?>
-<? endforeach ?>
+<input name="data[reg]" placeholder="näide:123ABC">
 </br>
 <label class="control-label">Aasta:</label>
 <select name="data[year_id]">
@@ -75,12 +72,7 @@
 </select>
 </br>
 <label class="control-label">Sõiduki läbisõit(km):</label>
-<input name="data[]" placeholder="näide:85000">
-<? foreach ($km_index as $km_type): ?>
-    <div class="input-group">
-        <input value="<?= $km_type['km_id'] ?>"><?= $km_type['km_name'] ?>
-    </div>
-<? endforeach ?>
+<input name="data[km]" placeholder="näide:85000">
 </br>
 <label class="control-label">Kütus:</label>
 <select name="data[fuel_type_id]">
@@ -101,13 +93,7 @@
 </select>
 </br>
 <label class="control-label">Hind:</label>
-<input name="data[price_id]">
-<? foreach ($price_index as $price_type): ?>
-    <div class="input-group">
-        <input
-            value="<?= $price_type['price_id'] ?>"><?= $price_type['price_name'] ?>
-    </div>
-<? endforeach ?>
+<input name="data[price]">
 </br>
 <label class="control-label">Käigukast:</label>
 <select name="data[gearbox_id]">
@@ -128,12 +114,7 @@
 </select>
 </br>
 <label class="control-label">Mootori võimsus(kW):</label>
-<input name="data[kw_id]">
-<? foreach ($kw_index as $kw_type): ?>
-    <div class="input-group">
-        <input value="<?= $kw_type['kw_id'] ?>"><?= $kw_type['kw_name'] ?>
-    </div>
-<? endforeach ?>
+<input name="data[kw]">
 </br>
 <label class="control-label">Toodud riigist:</label>
 <select name="data[country_id]">
@@ -154,10 +135,7 @@
 </select>
 </br>
 <label class="control-label">Muu:</label>
-<textarea name="data[muu_id]" class="form-control" rows="4" style="width: 300px;"></textarea>
-<? foreach ($muu_index as $muu_type): ?>
-    <input value="<?= $muu_type['muu_id'] ?>"><?= $muu_type['muu_name'] ?>
-<? endforeach ?>
+<textarea name="data[muu]" class="form-control" rows="4" style="width: 300px;"></textarea>
 </br>
 <!-- TABEL -->
 
@@ -276,10 +254,7 @@
 <!-- TABELI LÕPP -->
 </br>
 <label class="control-label">Muud lisad:</label>
-<textarea name="data[muudlisad_id]" class="form-control" rows="4" style="width: 300px;"></textarea>
-<? foreach ($muudlisad_index as $muudlisad_type): ?>
-    <input value="<?= $muudlisad_type['muudlisad_id'] ?>"><?= $muudlisad_type['muudlisad_name'] ?>
-<? endforeach ?>
+<textarea name="data[muudlisad]" class="form-control" rows="4" style="width: 300px;"></textarea>
 </br>
 </div>
 </div>
